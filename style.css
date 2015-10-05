@@ -1,0 +1,52 @@
+@charset "utf-8";
+
+body {
+
+
+background-image:url(img/wallpaper_large.jpg);
+background-size:cover;
+}
+
+.boxlogo {
+	height: 150px;
+	width: 150px;
+	border-style: solid;
+	border-width: 3px;
+	;
+	border-color: #000000;
+	margin-left: 200px;
+	margin-bottom: -2px;
+}
+
+
+
+div.innerbox {
+	margin: 5%;
+	font-weight: bold;
+	color: #000000;	
+}
+
+div.transbox {
+border: solid #000000;
+	width: 73%;
+	height: 1080px;
+	margin-left: 200px;
+	margin-right: 200px;
+	background-color: rgba(255,255,255,0.8);
+	/*opacity: 0.5;*/
+	
+}
+
+.footer {
+border: solid #000000;
+	width: 73%;
+height; 30px;
+margin-left: 200px;
+	margin-right: 200px;
+	background-color: rgba(255,255,255,0.8);
+	margin-top: -3px;
+	font-weight: bold;
+	
+}
+
+
