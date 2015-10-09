@@ -1,0 +1,58 @@
+/* Kaikkialla sama fonttityyli*/
+
+* {
+    font-family: Verdana;
+    background-color: #FFFF99;
+    
+}
+
+
+
+#content {
+	position: fixed;
+    left: 25%;
+    border: 2px;
+    border-color: #ff8000;
+    border-style: solid;
+    bottom: 1px;
+    top: 5px;
+
+    padding: 60px;
+        height: 90%;
+        background-color: #EEEEEE;
+}
+
+table {
+    border: 2px;
+    background-color: #FFFFFF;
+    border-color: #53567b;
+    border-style: solid;
+
+    width:300px;
+        top:40%;
+
+}
+tr{
+	   height:75px;
+}
+td {
+	background-color: #FFFFFF;
+    border: 2px;
+    border-color: #53567b;
+    border-style: solid;
+    text-align: center;
+}
+.Sininen {
+    background-color: #DDDDFF;
+}
+.Contharmaa {
+    background-color: #EEEEEE;
+}
+
+.Center {
+	position: relative;
+    top: 75%;
+    left: 25%;
+}
+
+
