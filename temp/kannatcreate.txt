@@ -1,0 +1,38 @@
+create table tayte
+nimi
+id
+
+create table postitoimipaikka
+postinumero
+postitmp
+
+create table tuoteryhma
+id
+nimi
+
+create table taytteet
+id
+tayte
+
+create table tuote
+id
+nimi
+hinta 
+tuoteryhma
+taytteet
+
+create table tilausrivi
+maara
+rivihinta
+tuote
+
+create table asiakas
+etunimi
+sukunimi
+puhelin
+osoite + postitoimi
+
+create table tilaus
+tilausosoite
+tilauspvm
+hintasumma
