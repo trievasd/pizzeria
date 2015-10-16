@@ -19,7 +19,7 @@ Julia: Katkarapu, Ananas, Aurajuusto, Kinkku
 Romeo: Katkarapu, Salami, Ananas, Aurajuusto 
 
 
-
+//ei tarvi
 Kebut
 Pitakebab
 Iskenderkebab
@@ -27,6 +27,7 @@ Kebab ranskalaisilla
 Kebab lohkoperunoilla
 Kebab valkosipuliperunoilla
 Rullakebab
+//
 
 Falafel
 
