@@ -29,17 +29,16 @@ Kebab valkosipuliperunoilla
 Rullakebab
 //
 
-Falafel
 
 Juomat
 Limut 0.5
 Kivennäisvesi 0.5
 Limut 0.33
+
+//sivulla, ei kannassa eikä tilauksiin
 Vesi
 Kahvi
 Tee
 Hanajuomat
-Olut 0.33
-Olut hana
-
+//
 

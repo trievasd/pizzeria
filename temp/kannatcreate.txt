@@ -7,28 +7,33 @@ create table tuoteryhma
 id
 nimi
 
-create table tuotteentaytteet
-id
-tayte_id
-tuote_id
 
 create table tuote
 id
 nimi
 hinta 
 tuoteR_id
-tuoteT_id
 
-create table tilausrivi
-maara
-rivihinta
+create table tuotteentaytteet
+id
+tayte_id
 tuote_id
 
 
 create table tilaus
+id
 tilausosoite
 tilauspvm
 hintasumma
 etun_asiakas
 sukun_asiakas
-pu_asiakas
+puh_asiakas
+
+
+create table tilausrivi
+id
+maara
+rivihinta
+tuote_id
+tilaus_id
+
