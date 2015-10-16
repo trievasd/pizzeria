@@ -1,1 +1,45 @@
-fj
+Pizzat
+Margarita: Tomaattikastike, Tuplajuusto
+Bolognese: Jauheliha, Tomaattikastike
+Americano: Ananas, Aurajuusto, Kinkku 
+Opera: Herkkusieni, Kinkku, Tonnikala 
+Vegetariana: Herkkusieni, Oliivi, Paprika, Sipuli
+Pepperoni: Jalopeno, Kinkku, Pepperonimakkara, Sipuli 
+Izmir: Fetajuusto, Kapris, Katkarapu, Sipuli, Tomaatti
+Quattro stagioni: Herkkusieni, Katkarapu, Kinkku, Paprika 
+Kebabpizza: Jalopeno, Kebab-liha, Sipuli, Tomaatti 
+Dillinger: Jauheliha, Kinkku, Salami, Sipuli 
+Herkules: Herkkusieni, Kananmuna, Kinkku, Oliivi, Salami
+Mexicana: Jauheliha, Paprika, Pippurimakkara, Jalapeno, Pippurisekoitus
+Smetana:  Fetajuusto, Tomaatti, Jalapeno, Punasipuli, Kebabliha, Smetana 
+Frutti Di Mare: Katkarapu, Simpukka, Tonnikala 
+Al capone: Kinkku, Sipuli, Tomaatti, Tonnikala 
+Kummisetä: Herkkusieni, Katkarapu, Kinkku, Parsa, Tuplajuusto, Valkosipuli 
+Julia: Katkarapu, Ananas, Aurajuusto, Kinkku 
+Romeo: Katkarapu, Salami, Ananas, Aurajuusto 
+
+
+//ei tarvi
+Kebut
+Pitakebab
+Iskenderkebab
+Kebab ranskalaisilla
+Kebab lohkoperunoilla
+Kebab valkosipuliperunoilla
+Rullakebab
+//
+
+Falafel
+
+Juomat
+Limut 0.5
+Kivennäisvesi 0.5
+Limut 0.33
+Vesi
+Kahvi
+Tee
+Hanajuomat
+Olut 0.33
+Olut hana
+
+
