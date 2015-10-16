@@ -20,15 +20,6 @@ Romeo: Katkarapu, Salami, Ananas, Aurajuusto
 
 
 
-Kebut
-Pitakebab
-Iskenderkebab
-Kebab ranskalaisilla
-Kebab lohkoperunoilla
-Kebab valkosipuliperunoilla
-Rullakebab
-
-Falafel
 
 Juomat
 Limut 0.5
@@ -38,7 +29,6 @@ Vesi
 Kahvi
 Tee
 Hanajuomat
-Olut 0.33
-Olut hana
+
 
 

@@ -2,37 +2,33 @@ create table tayte
 nimi
 id
 
-create table postitoimipaikka
-postinumero
-postitmp
 
 create table tuoteryhma
 id
 nimi
 
-create table taytteet
+create table tuotteentaytteet
 id
-tayte
+tayte_id
+tuote_id
 
 create table tuote
 id
 nimi
 hinta 
-tuoteryhma
-taytteet
+tuoteR_id
+tuoteT_id
 
 create table tilausrivi
 maara
 rivihinta
-tuote
+tuote_id
 
-create table asiakas
-etunimi
-sukunimi
-puhelin
-osoite + postitoimi
 
 create table tilaus
 tilausosoite
 tilauspvm
 hintasumma
+etun_asiakas
+sukun_asiakas
+pu_asiakas
