@@ -1,21 +1,21 @@
 CREATE TABLE tayte
 (
-tayte_id int NOT NULL,
-tayte_nimi VARCHAR NOT NULL,
+tayte_id int NOT NULL AUTO_INCREMENT,
+tayte_nimi VARCHAR(30) NOT NULL,
 PRIMARY KEY (tayte_id)
 )
 
 CREATE TABLE tuoteryhma
 (
-tryhma_id int NOT NULL,
-tryhma_nimi VARCHAR NOT NULL,
+tryhma_id int NOT NULL AUTO_INCREMENT,
+tryhma_nimi VARCHAR(8) NOT NULL,
 PRIMARY KEY (tryhma_id)
 )
 
 CREATE TABLE tuote
 (
-tuote_id int NOT NULL,
-tuote_nimi VARCHAR NOT NULL,
+tuote_id int NOT NULL AUTO_INCREMENT,
+tuote_nimi VARCHAR(30) NOT NULL,
 tuote_hinta 
 tryhma_id
 PRIMARY KEY (tuote_id),
@@ -24,7 +24,7 @@ FOREING KEY (tryhma_id) REFERENCES tuoteryhma(tryhma_id)
 
 CREATE TABLE tuotteentaytteet
 (
-tuottay_id int NOT NULL,
+tuottay_id int NOT NULL AUTO_INCREMENT,
 PRIMARY KEY (tuottay_id),
 FOREING KEY (tayte_id) REFERENCES tayte(tayte_id),
 FOREING KEY (tuote_id) REFERENCES tuote(tuote_id)
@@ -32,19 +32,19 @@ FOREING KEY (tuote_id) REFERENCES tuote(tuote_id)
 
 CREATE TABLE tilaus
 (
-tilaus_id int NOT NULL,
-tilausosoite VARCHAR NOT NULL,
+tilaus_id INT NOT NULL AUTO_INCREMENT,
+tilausosoite VARCHAR(255) NOT NULL,
 tilauspvm
 hintasumma
-etun_asiakas VARCHAR NOT NULL,
-sukun_asiakas VARCHAR NOT NULL,
+etun_asiakas VARCHAR(18) NOT NULL,
+sukun_asiakas VARCHAR(30) NOT NULL,
 puh_asiakas
 PRIMARY KEY (tilaus_id)
 )
 
 CREATE TABLE tilausrivi
 (
-tilriv_id int NOT NULL,
+tilriv_id int NOT NULL AUTO_INCREMENT,
 maara int NOT NULL,
 rivihinta
 PRIMARY KEY (tilriv_id),
