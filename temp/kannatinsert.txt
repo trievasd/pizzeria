@@ -1,22 +1,11 @@
-INSERT INTO tayte (tayte_nimi)
-VALUES (Tomaattikastike);
-
- Tuplajuusto
-Jauheliha,
- Ananas, Aurajuusto, Kinkku 
-Herkkusieni,  Tonnikala 
-Oliivi, Paprika, Sipuli
-Jalopeno, Pepperonimakkara, Sipuli 
-Fetajuusto, Kapris, Katkarapu,Tomaatti
-Katkarapu,
-Kebab-liha
-Salami
-Kananmuna
-Pippurimakkara,Pippurisekoitus
-Punasipuli, Smetana 
-Simpukka,
-
-Parsa,  Valkosipuli 
-
-//
+INSERT INTO Tayte
+VALUES ('1','Tomaattikastike'),('2','Tuplajuusto'),
+('3','Jauheliha'),('4','Ananas'),('5','Aurajuusto'),
+('6','Kinkku'),('7','Herkkusieni'),('8','Tonnikala'),
+('9','Oliivi'),('10','Paprika'),('11','Sipuli'),
+('12','Fetajuusto'),('13','Kapris'),('14','Katkarapu'),
+('15','Tomaatti'),('16','Kebab-liha'),('17','Salami'),
+('18','Kananmuna'),('19','Pippurimakkara'),('20','Jalopeno'),
+('21','Pepperonimakkara'),('22','Pippurisekoitus'),('23','Punasipuli'),
+('24','Smetana'),('25','Simpukka');
 
