@@ -1,0 +1,22 @@
+INSERT INTO tayte (tayte_nimi)
+VALUES (Tomaattikastike);
+
+ Tuplajuusto
+Jauheliha,
+ Ananas, Aurajuusto, Kinkku 
+Herkkusieni,  Tonnikala 
+Oliivi, Paprika, Sipuli
+Jalopeno, Pepperonimakkara, Sipuli 
+Fetajuusto, Kapris, Katkarapu,Tomaatti
+Katkarapu,
+Kebab-liha
+Salami
+Kananmuna
+Pippurimakkara,Pippurisekoitus
+Punasipuli, Smetana 
+Simpukka,
+
+Parsa,  Valkosipuli 
+
+//
+
