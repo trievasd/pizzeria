@@ -32,7 +32,7 @@
 
 <body>
 
-    <div class="brand">Aurinkopizza</div>
+    <div class="brand">Aurinkopizza</div> <!-- Upper business name and info -->
     <div class="address-bar">
 Opastinsilta 12 b, 00520 Helsinki
 <br>Auki Arkisin 9-22, Viikonloppuisin 9-24</div>
@@ -55,13 +55,13 @@ Opastinsilta 12 b, 00520 Helsinki
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
                     <li>
-                        <a href="index.html">Etusivu</a>
+                        <a href="index.jsp">Etusivu</a>
                     </li>
                     <li>
-                        <a href="menu.html">Menu</a>
+                        <a href="menu.jsp">Menu</a>
                     </li>
                     <li>
-                        <a href="contact.html">Ota yhteyttä</a>
+                        <a href="contact.jsp">Ota yhteyttä</a>
                     </li>
                 </ul>
             </div>
@@ -114,7 +114,7 @@ Opastinsilta 12 b, 00520 Helsinki
             </div>
         </div>
 
-        <div class="row">
+        <div class="row"> <!-- Container for text -->
             <div class="box">
                 <div class="col-lg-12">
                     <hr>
@@ -127,7 +127,7 @@ Opastinsilta 12 b, 00520 Helsinki
                     <p>Meille voit tulla syömään paikanpäälle, tai tilata annokset suoraan kotiovellesi puhelimella tai verkkosovelluksen kautta.</p>
                 </div>
             </div>
-        </div>
+        </div> <!-- /Container for text -->
 
         
 
