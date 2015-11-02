@@ -9,3 +9,12 @@ VALUES ('1','Tomaattikastike'),('2','Tuplajuusto'),
 ('21','Pepperonimakkara'),('22','Pippurisekoitus'),('23','Punasipuli'),
 ('24','Smetana'),('25','Simpukka');
 
+INSERT INTO Tuote (tuote_nimi, tuote_hinta)
+VALUES ('Margarita','6');
+
+INSERT INTO Tuote (tuote_nimi, tuote_hinta)
+VALUES ('Bolognese','6'),('Americano','7'),('Opera','7'),('Frutti Di Mare','7'),
+('Vegetariana','8'),('Pepperoni','8'),('Quattro Stagioni','8'),('Kebabpizza','8'),
+('Dillinger','8'),('Julia','8'),('Romeo','8'),('Al capone','8'),
+('Izmir','8.5'),('Herkules','8.5'),('Mexicana','8.5'),('Kummisetä','8.5');
+
