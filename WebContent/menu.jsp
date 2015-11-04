@@ -87,21 +87,31 @@ Opastinsilta 12 b, 00520 Helsinki
                 
                 <div class="col-md-6"> <!--CONTENT -->
                   
-                <table>
+                <table id="ruokalista">
 <caption>Pizzat</caption>
 <thead>
 	<tr>
 		<td>ID</td>
 		<td>Nimi</td>
+        <td>Täytteet</td>
 		<td>Hinta</td>
+        
 	</tr>
-    <tr>
-    <td> 1 </td>
-    <td> Bolognese </td>
-    <td> 6.9€ </td>
-    </tr>
+    
 </thead>
 <tbody>
+<tr class="alt">
+    <td> 1 </td>
+    <td> Bolognese </td>
+    <td> Jauheliha </td>
+    <td> 6.9€ </td>
+    </tr>
+    <tr>
+    <td>2</td>
+    <td>asdasdasd</td>
+    <td>asdasdasd</td>
+    <td> 7.9€ </td>
+    </tr>
 <c:forEach items="${pizzat}" var="pizz">
 	<tr>
 		<td><c:out value="${pizz.id}"/></td>

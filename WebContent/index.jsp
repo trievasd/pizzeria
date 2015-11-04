@@ -3,7 +3,7 @@
 
 <head>
 
-    <meta charset="utf-8">
+    <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
@@ -61,7 +61,7 @@ Opastinsilta 12 b, 00520 Helsinki
                         <a href="menu.jsp">Menu</a>
                     </li>
                     <li>
-                        <a href="contact.jsp">Ota yhteyttä</a>
+                        <a href="contact.jsp">Ota yhteyttï¿½</a>
                     </li>
                 </ul>
             </div>
@@ -122,9 +122,9 @@ Opastinsilta 12 b, 00520 Helsinki
                         <strong>Aurinkopizza</strong>
                     </h2>
                     
-                    <p>Aurinkopizza on vuoden 2015 syksyllÃ¤ perustettu pizzeria Pasilan aseman välittömässä läheisyydessä.</p>
+                    <p>Aurinkopizza on vuoden 2015 syksyllÃ¤ perustettu pizzeria Pasilan aseman vï¿½littï¿½mï¿½ssï¿½ lï¿½heisyydessï¿½.</p>
                     <p>Ruokavalikoimiimme kuuluu useita erilaisia pizzoja ja limuja, katso tarkempi valikoima painamalla Menu kohtaa.</p>
-                    <p>Meille voit tulla syömään paikanpäälle, tai tilata annokset suoraan kotiovellesi puhelimella tai verkkosovelluksen kautta.</p>
+                    <p>Meille voit tulla syï¿½mï¿½ï¿½n paikanpï¿½ï¿½lle, tai tilata annokset suoraan kotiovellesi puhelimella tai verkkosovelluksen kautta.</p>
                 </div>
             </div>
         </div> <!-- /Container for text -->
