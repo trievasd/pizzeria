@@ -61,7 +61,7 @@ Opastinsilta 12 b, 00520 Helsinki
                         <a href="menu.jsp">Menu</a>
                     </li>
                     <li>
-                        <a href="contact.jsp">Ota yhteytt√§</a>
+                        <a href="contact.jsp">Ota yhteytt‰</a>
                     </li>
                 </ul>
             </div>
@@ -97,7 +97,7 @@ Opastinsilta 12 b, 00520 Helsinki
                             <br>00520 Helsinki</strong>
                     </p>
                 <p>Toimitusalue:
-                				<strong> 7 Kilometri√§</strong></p>
+                				<strong> 7 Kilometri‰</strong></p>
                 </div>
                 <div class="clearfix"></div>
             </div>
@@ -120,7 +120,7 @@ Opastinsilta 12 b, 00520 Helsinki
                                 <input type="text" class="form-control">
                             </div>
                             <div class="form-group col-lg-4">
-                                <label>S√§hk√∂posti</label>
+                                <label>S‰hkˆposti</label>
                                 <input type="email" class="form-control">
                             </div>
                             <div class="form-group col-lg-4">
@@ -134,7 +134,7 @@ Opastinsilta 12 b, 00520 Helsinki
                             </div>
                             <div class="form-group col-lg-12">
                                 <input type="hidden" name="save" value="contact">
-                                <button type="submit" class="btn btn-default">L√§het√§</button>
+                                <button type="submit" class="btn btn-default">L‰het‰§</button>
                             </div>
                         </div>
                     </form>

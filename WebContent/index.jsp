@@ -61,7 +61,7 @@ Opastinsilta 12 b, 00520 Helsinki
                         <a href="menu.jsp">Menu</a>
                     </li>
                     <li>
-                        <a href="contact.jsp">Ota yhteytt√§</a>
+                        <a href="contact.jsp">Ota yhteytt‰</a>
                     </li>
                 </ul>
             </div>
@@ -122,9 +122,9 @@ Opastinsilta 12 b, 00520 Helsinki
                         <strong>Aurinkopizza</strong>
                     </h2>
                     
-                    <p>Aurinkopizza on vuoden 2015 syksyll√§ perustettu pizzeria Pasilan aseman v√§litt√∂m√§ss√§ l√§heisyydess√§.</p>
+                    <p>Aurinkopizza on vuoden 2015 syksyll√§ perustettu pizzeria Pasilan aseman v‰littˆm‰ss‰ l‰heisyydess‰.</p>
                     <p>Ruokavalikoimiimme kuuluu useita erilaisia pizzoja ja limuja, katso tarkempi valikoima painamalla Menu kohtaa.</p>
-                    <p>Meille voit tulla sy√∂m√§√§n paikanp√§√§lle, tai tilata annokset suoraan kotiovellesi puhelimella tai verkkosovelluksen kautta.</p>
+                    <p>Meille voit tulla syˆm‰‰n paikanp‰‰lle, tai tilata annokset suoraan kotiovellesi puhelimella tai verkkosovelluksen kautta.</p>
                 </div>
             </div>
         </div> <!-- /Container for text -->
