@@ -1,3 +1,6 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+    <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -61,7 +64,7 @@ Opastinsilta 12 b, 00520 Helsinki
                         <a href="menu.jsp">Menu</a>
                     </li>
                     <li>
-                        <a href="contact.jsp">Ota yhteyttä</a>
+                        <a href="contact.jsp">Ota yhteytt�</a>
                     </li>
                 </ul>
             </div>
@@ -84,7 +87,30 @@ Opastinsilta 12 b, 00520 Helsinki
                 
                 <div class="col-md-6"> <!--CONTENT -->
                   
-                   <img src="img/printtisaato.png" > 
+                <table>
+<caption>Pizzat</caption>
+<thead>
+	<tr>
+		<td>ID</td>
+		<td>Nimi</td>
+		<td>Hinta</td>
+	</tr>
+    <tr>
+    <td> 1 </td>
+    <td> Bolognese </td>
+    <td> 6.9€ </td>
+    </tr>
+</thead>
+<tbody>
+<c:forEach items="${pizzat}" var="pizz">
+	<tr>
+		<td><c:out value="${pizz.id}"/></td>
+		<td><c:out value="${pizz.nimi}"/></td>
+		<td><c:out value="${pizz.hinta}"/></td>
+	</tr>
+</c:forEach>
+</tbody>
+</table>
                 </div> <!-- /CONTENT -->
                 <div class="clearfix"></div>
             </div> <!-- /Container for contact form -->
