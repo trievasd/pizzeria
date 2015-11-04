@@ -1,0 +1,37 @@
+﻿ 
+//tilaus ja tilausrivi, molemmista tulee poistaa samaa tilausID:tä käyttävät tiedot, X on muuttuja
+DELETE FROM tilausrivi WHERE tilaus_id=X;
+
+DELETE FROM tilaus WHERE id=X;
+
+//
+
+//tuote ja tuotteentäytteet, tuotteen poistamiseksi tulee tietää tuotteen ID, X on muuttuja
+
+DELETE FROM tuotteentaytteet WHERE tuote_id=X;
+
+DELETE FROM tuote WHERE tuote_id=X;
+
+//
+
+
+//INSERT POHJAT
+
+
+INSERT INTO tilausrivi (maara, tilaus_id, tuote_id, rivihinta, oregano)
+VALUES ('INT','INT','INT','DOUBLE (xx.xx)',BOOLEAN);
+
+
+INSERT INTO tilaus (tilausos, postinro, postitmp, tilauspvm, hintasumma, asiaketun, asiaksukun, asiakpuh)
+VALUES ('STRING','STRING','STRING','XXXX-XX-XX XX:XX:XX muotoon','DOUBLE (xx.xx)','STRING','STRING','STRING');
+
+INSERT INTO tuote (nimi, hinta)
+VALUES ('STRING','DOUBLE (xx.xx)');
+
+/jos ei täytettä, 'INT' sijaan pelkkä NULL, tulee tietää täytteiden ID
+INSERT INTO tuotteentaytteet (tayte1_id, tayte2_id, tayte3_id, tayte4_id, tayte5_id, tayte6_id, tuote_id)
+VALUES ('INT','INT','INT','INT','INT','INT','INT');
+
+INSERT INTO tayte (nimi)
+VALUES ('STRING');
+
