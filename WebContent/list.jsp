@@ -4,7 +4,6 @@
 <%@taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
  <%@ page import="java.util.List" %>
   <%@ page import="java.util.ArrayList" %>
- <%@ page import="fi.omapizzeria.admin.bean.Pizza" %>
   
     
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
@@ -39,7 +38,7 @@
 <tr><td>&nbsp;</td><td><button type="submit">Lähetä</button></td></tr>
 
 </table>
-
+</form>
 
 
 
