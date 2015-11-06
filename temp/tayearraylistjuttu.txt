@@ -1,0 +1,57 @@
+﻿+----+------------------+-------+-----------------+-------------+------------------+-----------+-----------------+--------+
+| id | pizza            | hinta | tayte1          | tayte2      | tayte3           | tayte4    | tayte5          | tayte6 |
++----+------------------+-------+-----------------+-------------+------------------+-----------+-----------------+--------+
+|  1 | Margarita        |  6.00 | Tomaattikastike | Tuplajuusto | NULL             | NULL      | NULL            | NULL   |
+|  2 | Bolognese        |  6.00 | Tomaattikastike | Jauheliha   | NULL             | NULL      | NULL            | NULL   |
+|  3 | Americano        |  7.00 | Ananas          | Aurajuusto  | Kinkku           | NULL      | NULL            | NULL   |
+|  4 | Opera            |  7.00 | Kinkku          | Herkkusieni | Tonnikala        | NULL      | NULL            | NULL   |
+|  5 | Frutti Di Mare   |  7.00 | Katkarapu       | Simpukka    | Tonnikala        | NULL      | NULL            | NULL   |
+|  6 | Vegetariana      |  8.00 | Herkkusieni     | Oliivi      | Paprika          | Sipuli    | NULL            | NULL   |
+|  7 | Pepperoni        |  8.00 | Jalopeno        | Kinkku      | Pepperonimakkara | Sipuli    | NULL            | NULL   |
+|  8 | Quattro Stagioni |  8.00 | Herkkusieni     | Katkarapu   | Kinkku           | Paprika   | NULL            | NULL   |
+|  9 | Kebabpizza       |  8.00 | Jalopeno        | Kebab-liha  | Sipuli           | Tomaatti  | NULL            | NULL   |
+| 10 | Dillinger        |  8.00 | Jauheliha       | Kinkku      | Salami           | Sipuli    | NULL            | NULL   |
+| 11 | Julia            |  8.00 | Katkarapu       | Ananas      | Aurajuusto       | Kinkku    | NULL            | NULL   |
+| 12 | Romeo            |  8.00 | Katkarapu       | Salami      | Ananas           | Kinkku    | NULL            | NULL   |
+| 13 | Al capone        |  8.00 | Kinkku          | Sipuli      | Tomaatti         | Tonnikala | NULL            | NULL   |
+| 14 | Izmir            |  8.50 | Fetajuusto      | Kapris      | Katkarapu        | Sipuli    | NULL            | NULL   |
+| 15 | Herkules         |  8.50 | Herkkusieni     | Kananmuna   | Kinkku           | Oliivi    | Salami          | NULL   |
+| 16 | Mexicana         |  8.50 | Jauheliha       | Paprika     | Pippurimakkara   | Jalopeno  | Pippurisekoitus | NULL   |
+| 17 | Kummisetä        |  8.50 | Herkkusieni     | Katkarapu   | Kinkku           | Parsa     | Tuplajuusto     | NULL   |
++----+------------------+-------+-----------------+-------------+------------------+-----------+-----------------+--------+
+
+ArrayList<Pizza> pizzalista = new....
+
+loop (resultset.next()) {
+	Pizza p = new Pizza();
+	pizzat.add(p);
+	p.setId(resultset.getInt("id"));
+	p.setNimi(resultset.getString("pizza"));
+	p.setHinta(resultset.getDouble("hinta"));
+
+	String tayte1 = resultset.getString("tayte1");
+	if (tayte1 != null) {
+		p.getTaytteet().add(new Tayte(tayte1));
+		String tayte2 = resultset.getString("tayte2");
+		if (tayte2 != null) {
+			p.getTaytteet().add(new Tayte(tayte2));
+			String tayte3 = resultset.getString("tayte3");
+			if (tayte3 != null) {
+				p.getTaytteet().add(new Tayte(tayte3));
+				String tayte4 = resultset.getString("tayte4");
+				if (tayte4 != null) {
+					p.getTaytteet().add(new Tayte(tayte4));
+					String tayte5 = resultset.getString("tayte5");
+					if (tayte5 != null) {
+						p.getTaytteet().add(new Tayte(tayte5));
+						String tayte6 = resultset.getString("tayte6");
+						if (tayte 6 != null) {
+							p.getTaytteet().add(new Tayte(tayte6));
+						}
+					}
+				}
+			}
+		}
+	}
+}
+return pizzalista;

@@ -10,6 +10,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import dao.PizzaDAO;
+import dao.TayteDAO;
 import fi.omapizzeria.admin.bean.Pizza;
 
 /**
@@ -33,13 +34,17 @@ public class MenuServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 		
-		PizzaDAO pDao = new PizzaDAO();
-		List<Pizza> pizzat = pDao.haePizzat();	
+		//PizzaDAO pDao = new PizzaDAO();
+		//List<Pizza> pizzat = pDao.haePizzat();	
+		
+		TayteDAO tDao = new TayteDAO();
+		List<Pizza> pizzat = tDao.haePizzat();
 		
 		
 		
 		
 		request.setAttribute("pizzat", pizzat);
+		
 		
 		request.getRequestDispatcher("menu.jsp").forward(request, response);
 	}

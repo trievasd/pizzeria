@@ -11,11 +11,12 @@ public class Pizza {
 	private ArrayList<Tayte> taytteet;
 	
 
-	public Pizza(int id, String nimi, double hinta) {
+	public Pizza(/*int id, String nimi, double hinta, ArrayList<Tayte> taytteet*/) {
 		super();
 		this.id = id;
 		this.nimi = nimi;
 		this.hinta = hinta;
+		this.taytteet = new ArrayList<Tayte>();
 	}
 
 	

@@ -95,28 +95,22 @@ Opastinsilta 12 b, 00520 Helsinki
 		<td>Nimi</td>
         <td>Täytteet</td>
 		<td>Hinta</td>
-        
+		<td>Nappi</td>
 	</tr>
     
 </thead>
 <tbody>
-<tr class="alt">
-    <td> 1 </td>
-    <td> Bolognese </td>
-    <td> Jauheliha </td>
-    <td> 6.9€ </td>
-    </tr>
-    <tr>
-    <td>2</td>
-    <td>asdasdasd</td>
-    <td>asdasdasd</td>
-    <td> 7.9€ </td>
-    </tr>
-<c:forEach items="${pizzat}" var="pizz">
+<c:forEach items="${pizzat}" var="pizza">
 	<tr>
-		<td><c:out value="${pizz.id}"/></td>
-		<td><c:out value="${pizz.nimi}"/></td>
-		<td><c:out value="${pizz.hinta}"/></td>
+		<td><c:out value="${pizza.id}"/></td>
+		<td><c:out value="${pizza.nimi}"/></td>
+		<td>
+		<c:forEach items="${pizza.taytteet}" var="tayte" varStatus="counter">
+			<c:out value="${tayte.nimi}"/><c:if test="${!counter.last}">, </c:if> 
+		</c:forEach>
+		</td>
+		<td><c:out value="${pizza.hinta}"/> &euro;</td>
+		<td><button>Lisää teemukoriin</button></td>
 	</tr>
 </c:forEach>
 </tbody>
