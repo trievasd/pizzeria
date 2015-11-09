@@ -1,9 +1,16 @@
 
+tilausrivi tulee luoda ensin(!!!)(kantaan)(!!!)
+
+eli JSP'st‰ saadut tiedot luovat olion, jolla m‰‰r‰, laskettu rivihinta m‰‰r‰st‰ tuote_id'n avulla kannasta,
+oregano ja valk sipuli check boxit.
+
+JSP vie sivulle, joka n‰yt‰‰ olion tiedot listalla. Listalta voi poistaa. (listalla olevat tuotteet eiv‰t viel‰ tilausrivi/tilaus kannassa)
 
 
-lis‰‰ tableen tilausrivi kohdan/ m‰‰r‰t, tuote
+
 lis‰‰ tableen tilaus kohdan
+lis‰‰ tableen tilausrivi kohdan/ m‰‰r‰t, tuote
 
-hinta alvillinen
+hinta alvillinen(!!!)
 
-valkosipuli tilausriviin (boolean)
+//valkosipuli tilausriviin (boolean)(done)//
