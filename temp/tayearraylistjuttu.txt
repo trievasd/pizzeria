@@ -22,7 +22,7 @@
 
 ArrayList<Pizza> pizzalista = new....
 
-loop (resultset.next()) {
+while (resultset.next()) {
 	Pizza p = new Pizza();
 	pizzat.add(p);
 	p.setId(resultset.getInt("id"));
