@@ -3,3 +3,7 @@
 
 lis‰‰ tableen tilausrivi kohdan/ m‰‰r‰t, tuote
 lis‰‰ tableen tilaus kohdan
+
+hinta alvillinen
+
+valkosipuli tilausriviin (boolean)
