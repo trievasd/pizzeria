@@ -30,5 +30,5 @@ VALUES ('1','2',NULL,NULL,NULL,NULL,'1'),('1','3',NULL,NULL,NULL,NULL,'2'),
 INSERT INTO tilaus (tilausos, postinro, postitmp, tilauspvm, hintasumma, asiaketun, asiaksukun, asiakpuh)
 VALUES ('Käpyläntie 12 as.8','00650','Helsinki','2015-12-25 13:34:23','24.00','Jaakko','Siiskonen','050973920');
 
-INSERT INTO tilausrivi (maara, tilaus_id, tuote_id, rivihinta, oregano)
-VALUES ('2','1','7','16.00',FALSE),('1','1','9','8.00',TRUE);
+INSERT INTO tilausrivi (maara, tilaus_id, tuote_id, rivihinta, oregano, valkosipuli)
+VALUES ('2','1','7','16.00',FALSE, true),('1','1','9','8.00',TRUE, false);

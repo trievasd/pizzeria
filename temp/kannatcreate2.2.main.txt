@@ -51,6 +51,7 @@ tilaus_id INTEGER,
 tuote_id INTEGER,
 rivihinta DECIMAL(6,2),
 oregano BOOLEAN,
+valkosipuli BOOLEAN,
 FOREIGN KEY (tilaus_id) REFERENCES tilaus(id),
 FOREIGN KEY (tuote_id) REFERENCES tuote(id)
 );
