@@ -1,0 +1,37 @@
+INSERT INTO tayte
+VALUES ('1','Tomaattikastike'),('2','Tuplajuusto'),
+('3','Jauheliha'),('4','Ananas'),('5','Aurajuusto'),
+('6','Kinkku'),('7','Herkkusieni'),('8','Tonnikala'),
+('9','Oliivi'),('10','Paprika'),('11','Sipuli'),
+('12','Fetajuusto'),('13','Kapris'),('14','Katkarapu'),
+('15','Tomaatti'),('16','Kebab-liha'),('17','Salami'),
+('18','Kananmuna'),('19','Pippurimakkara'),('20','Jalopeno'),
+('21','Pepperonimakkara'),('22','Pippurisekoitus'),('23','Punasipuli'),
+('24','Smetana'),('25','Simpukka'),('26','Parsa');
+
+INSERT INTO hintaryhma (ryhmahinta)
+VALUES ('6'),('7'),('8'),('8.5');
+
+
+INSERT INTO tuote (nimi, hinta_id)
+VALUES ('Margarita','1'),('Bolognese','1'),('Americano','2'),('Opera','2'),('Frutti Di Mare','2'),
+('Vegetariana','3'),('Pepperoni','3'),('Quattro Stagioni','3'),('Kebabpizza','3'),
+('Dillinger','3'),('Julia','3'),('Romeo','3'),('Al capone','3'),
+('Izmir','4'),('Herkules','4'),('Mexicana','4'),('Kummisetä','4');
+
+INSERT INTO tuotteentaytteet (tayte1_id, tayte2_id, tayte3_id, tayte4_id, tayte5_id, tayte6_id, tuote_id)
+VALUES ('1','2',NULL,NULL,NULL,NULL,'1'),('1','3',NULL,NULL,NULL,NULL,'2'),
+('4','5','6',NULL,NULL,NULL,'3'),('6','7','8',NULL,NULL,NULL,'4'),
+('14','25','8',NULL,NULL,NULL,'5'),('7','9','10','11',NULL,NULL,'6'),
+('20','6','21','11',NULL,NULL,'7'),('7','14','6','10',NULL,NULL,'8'),
+('20','16','11','15',NULL,NULL,'9'),('3','6','17','11',NULL,NULL,'10'),
+('14','4','5','6',NULL,NULL,'11'),('14','17','4','6',NULL,NULL,'12'),
+('6','11','15','8',NULL,NULL,'13'),('12','13','14','11',NULL,NULL,'14'),
+('7','18','6','9','17',NULL,'15'),('3','10','19','20','22',NULL,'16'),
+('7','14','6','26','2',NULL,'17');
+
+INSERT INTO tilaus (tilausos, postinro, postitmp, tilauspvm, hintasumma, asiaketun, asiaksukun, asiakpuh)
+VALUES ('Käpyläntie 12 as.8','00650','Helsinki','2015-12-25 13:34:23','24.00','Jaakko','Siiskonen','050973920');
+
+INSERT INTO tilausrivi (maara, tilaus_id, tuote_id, rivihinta, oregano, valkosipuli)
+VALUES ('2','1','7','16.00',FALSE, true),('1','1','9','8.00',TRUE, false);

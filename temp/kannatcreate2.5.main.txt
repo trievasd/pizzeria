@@ -1,0 +1,71 @@
+CREATE TABLE tayte
+(
+id INTEGER NOT NULL PRIMARY KEY AUTO_INCREMENT,
+nimi VARCHAR(30) NOT NULL
+);
+
+CREATE TABLE hintaryhma
+(
+id INTEGER NOT NULL PRIMARY KEY AUTO_INCREMENT,
+ryhmahinta DECIMAL(4,2) NOT NULL
+);
+
+CREATE TABLE tuote
+(
+id INTEGER NOT NULL PRIMARY KEY AUTO_INCREMENT,
+nimi VARCHAR(30) NOT NULL,
+hinta_id INT NOT NULL,
+CONSTRAINT fk_hinta1_id FOREIGN KEY (hinta_id) REFERENCES hintaryhma(id)
+);
+
+
+CREATE TABLE tuotteentaytteet
+(
+id INTEGER NOT NULL PRIMARY KEY AUTO_INCREMENT,
+tayte1_id INT,
+tayte2_id INT,
+tayte3_id INT,
+tayte4_id INT,
+tayte5_id INT,
+tayte6_id INT,
+tuote_id INT NOT NULL,
+CONSTRAINT fk_tayt1_id FOREIGN KEY (tayte1_id) REFERENCES tayte(id),
+CONSTRAINT fk_tayt2_id FOREIGN KEY (tayte2_id) REFERENCES tayte(id),
+CONSTRAINT fk_tayt3_id FOREIGN KEY (tayte3_id) REFERENCES tayte(id),
+CONSTRAINT fk_tayt4_id FOREIGN KEY (tayte4_id) REFERENCES tayte(id),
+CONSTRAINT fk_tayt5_id FOREIGN KEY (tayte5_id) REFERENCES tayte(id),
+CONSTRAINT fk_tayt6_id FOREIGN KEY (tayte6_id) REFERENCES tayte(id),
+CONSTRAINT fk_tuote_id FOREIGN KEY (tuote_id) REFERENCES tuote(id)
+);
+
+CREATE TABLE tilaus
+(
+id INTEGER NOT NULL PRIMARY KEY AUTO_INCREMENT,
+tilausos VARCHAR(255) NOT NULL,
+postinro VARCHAR(5) NOT NULL,
+postitmp VARCHAR(30) NOT NULL,
+tilauspvm DATETIME NOT NULL,
+hintasumma DECIMAL(6,2),
+asiaketun VARCHAR(18) NOT NULL,
+asiaksukun VARCHAR(30) NOT NULL,
+asiakpuh VARCHAR (20)
+);
+
+CREATE TABLE tilausrivi
+(
+id INTEGER NOT NULL PRIMARY KEY AUTO_INCREMENT,
+maara INTEGER,
+tilaus_id INTEGER,
+tuote_id INTEGER,
+rivihinta DECIMAL(6,2),
+oregano BOOLEAN,
+valkosipuli BOOLEAN,
+FOREIGN KEY (tilaus_id) REFERENCES tilaus(id),
+FOREIGN KEY (tuote_id) REFERENCES tuote(id)
+);
+
+
+CREATE TABLE palaute
+(
+id INTEGER NOT NULL PRIMARY KEY AUTO_INCREMENT,
+pvm DATETIME NOT NULL,
