@@ -1,3 +1,5 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -58,10 +60,10 @@ Opastinsilta 12 b, 00520 Helsinki
                         <a href="index.jsp">Etusivu</a>
                     </li>
                     <li>
-                        <a href="menu.jsp">Menu</a>
+                        <a href="menu">Menu</a>
                     </li>
                     <li>
-                        <a href="contact.jsp">Ota yhteytt�</a>
+                        <a href="contact.jsp">Ota yhteyttä</a>
                     </li>
                 </ul>
             </div>
@@ -122,9 +124,9 @@ Opastinsilta 12 b, 00520 Helsinki
                         <strong>Aurinkopizza</strong>
                     </h2>
                     
-                    <p>Aurinkopizza on vuoden 2015 syksyllä perustettu pizzeria Pasilan aseman v�litt�m�ss� l�heisyydess�.</p>
+                    <p>Aurinkopizza on vuoden 2015 syksyllä perustettu pizzeria Pasilan aseman välittömässä läheisyydessä.</p>
                     <p>Ruokavalikoimiimme kuuluu useita erilaisia pizzoja ja limuja, katso tarkempi valikoima painamalla Menu kohtaa.</p>
-                    <p>Meille voit tulla sy�m��n paikanp��lle, tai tilata annokset suoraan kotiovellesi puhelimella tai verkkosovelluksen kautta.</p>
+                    <p>Meille voit tulla syömään paikanpäälle, tai tilata annokset suoraan kotiovellesi puhelimella tai verkkosovelluksen kautta.</p>
                 </div>
             </div>
         </div> <!-- /Container for text -->
@@ -138,7 +140,7 @@ Opastinsilta 12 b, 00520 Helsinki
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 text-center">
-                    <p>Copyright ⓈⓄⒻⓉⒶⒼⓊⓇⓊⓉ®™© OY AB</p>
+                    <p>Copyright ⓈⓄⒻⓉⒶⒼⓊⓇⓊⓉ</p>
                     <!-- DC Facebook Likes Start -->
 <iframe src="http://www.facebook.com/plugins/like.php?href=https://www.facebook.com/pages/Haaga-Helia-University/188757324496426?fref=ts&send=false&layout=standard&width=250&show_faces=false&action=like&colorscheme=light&font&height=35" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:250px; height:35px;" allowTransparency="true"></iframe>
 <!-- DC Facebook Likes End -->

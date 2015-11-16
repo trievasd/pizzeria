@@ -1,9 +1,11 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
 
-    <meta charset="utf-8">
+    <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
@@ -58,10 +60,10 @@ Opastinsilta 12 b, 00520 Helsinki
                         <a href="index.jsp">Etusivu</a>
                     </li>
                     <li>
-                        <a href="menu.jsp">Menu</a>
+                        <a href="menu">Menu</a>
                     </li>
                     <li>
-                        <a href="contact.jsp">Ota yhteytt�</a>
+                        <a href="contact.jsp">Ota yhteyttä</a>
                     </li>
                 </ul>
             </div>
@@ -97,7 +99,7 @@ Opastinsilta 12 b, 00520 Helsinki
                             <br>00520 Helsinki</strong>
                     </p>
                 <p>Toimitusalue:
-                				<strong> 7 Kilometri�</strong></p>
+                				<strong> 7 Kilometriä</strong></p>
                 </div>
                 <div class="clearfix"></div>
             </div>
@@ -120,7 +122,7 @@ Opastinsilta 12 b, 00520 Helsinki
                                 <input type="text" class="form-control">
                             </div>
                             <div class="form-group col-lg-4">
-                                <label>S�hk�posti</label>
+                                <label>Sähköposti</label>
                                 <input type="email" class="form-control">
                             </div>
                             <div class="form-group col-lg-4">
@@ -134,7 +136,7 @@ Opastinsilta 12 b, 00520 Helsinki
                             </div>
                             <div class="form-group col-lg-12">
                                 <input type="hidden" name="save" value="contact">
-                                <button type="submit" class="btn btn-default">L�het�</button>
+                                <button type="submit" class="btn btn-default">Lähetä¤</button>
                             </div>
                         </div>
                     </form>
@@ -149,7 +151,7 @@ Opastinsilta 12 b, 00520 Helsinki
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 text-center">
-                    <p>Copyright ⓈⓄⒻⓉⒶⒼⓊⓇⓊⓉ®™© OY AB</p>
+                    <p>Copyright ⓈⓄⒻⓉⒶⒼⓊⓇⓊⓉ</p>
                     <!-- DC Facebook Likes Start -->
 <iframe src="http://www.facebook.com/plugins/like.php?href=https://www.facebook.com/pages/Haaga-Helia-University/188757324496426?fref=ts&send=false&layout=standard&width=250&show_faces=false&action=like&colorscheme=light&font&height=35" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:250px; height:35px;" allowTransparency="true"></iframe>
 <!-- DC Facebook Likes End -->

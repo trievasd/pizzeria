@@ -6,7 +6,7 @@
 
 <head>
 
-    <meta charset="utf-8">
+    <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
@@ -61,10 +61,10 @@ Opastinsilta 12 b, 00520 Helsinki
                         <a href="index.jsp">Etusivu</a>
                     </li>
                     <li>
-                        <a href="menu.jsp">Menu</a>
+                        <a href="menu">Menu</a>
                     </li>
                     <li>
-                        <a href="contact.jsp">Ota yhteytt�</a>
+                        <a href="contact.jsp">Ota yhteyttä</a>
                     </li>
                 </ul>
             </div>
@@ -110,7 +110,7 @@ Opastinsilta 12 b, 00520 Helsinki
 		</c:forEach>
 		</td>
 		<td><c:out value="${pizza.hinta}"/> &euro;</td>
-		<td><button>Lisää teemukoriin</button></td>
+		<td><button>Lisää ostoskoriin</button></td>
 	</tr>
 </c:forEach>
 </tbody>
@@ -131,7 +131,7 @@ Opastinsilta 12 b, 00520 Helsinki
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 text-center">
-                    <p>Copyright ⓈⓄⒻⓉⒶⒼⓊⓇⓊⓉ®™© OY AB</p>
+                    <p>Copyright ⓈⓄⒻⓉⒶⒼⓊⓇⓊⓉ</p>
                     <!-- DC Facebook Likes Start -->
 <iframe src="http://www.facebook.com/plugins/like.php?href=https://www.facebook.com/pages/Haaga-Helia-University/188757324496426?fref=ts&send=false&layout=standard&width=250&show_faces=false&action=like&colorscheme=light&font&height=35" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:250px; height:35px;" allowTransparency="true"></iframe>
 <!-- DC Facebook Likes End -->
