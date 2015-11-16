@@ -43,8 +43,8 @@ public class PizzaDAO {
 			
 				
 			//Lis‰t‰‰n pizza listaan
-			Pizza p = new Pizza(id, nimi, hinta);
-			pizzat.add(p);
+			//Pizza p = new Pizza(id, nimi, hinta);
+			//pizzat.add(p);
 		}
 		
 	}catch(IOException e) {

@@ -30,7 +30,7 @@ public class TayteDAO {
 					DBConnectionProperties.getInstance().getProperty("password"));
 			
 			//Suoritetaan haku kantaan
-			String sql = "SELECT t.id, t.nimi as pizza, t.hinta, s1.nimi as tayte1, s2.nimi as tayte2, s3.nimi as tayte3, s4.nimi as tayte4, s5.nimi as tayte5, s6.nimi as tayte6 FROM tuotteentaytteet as tt left JOIN tuote as t ON t.id = tt.tuote_id left JOIN tayte as s1 ON tt.tayte1_id = s1.id left JOIN tayte as s2 ON tt.tayte2_id = s2.id left JOIN tayte as s3 ON tt.tayte3_id = s3.id left JOIN tayte as s4 ON tt.tayte4_id = s4.id left JOIN tayte as s5 ON tt.tayte5_id = s5.id left JOIN tayte as s6 ON tt.tayte6_id = s6.id";
+			String sql = "SELECT t.id, t.nimi as pizza, h.ryhmahinta as hinta, s1.nimi as tayte1, s2.nimi as tayte2, s3.nimi as tayte3, s4.nimi as tayte4, s5.nimi as tayte5, s6.nimi as tayte6 FROM tuotteentaytteet as tt left JOIN tuote as t ON t.id = tt.tuote_id left JOIN hintaryhma as h ON h.id = t.hinta_id left JOIN tayte as s1 ON tt.tayte1_id = s1.id left JOIN tayte as s2 ON tt.tayte2_id = s2.id left JOIN tayte as s3 ON tt.tayte3_id = s3.id left JOIN tayte as s4 ON tt.tayte4_id = s4.id left JOIN tayte as s5 ON tt.tayte5_id = s5.id left JOIN tayte as s6 ON tt.tayte6_id = s6.id";
 			Statement haku = yhteys.createStatement();
 			ResultSet tulokset = haku.executeQuery(sql);
 			

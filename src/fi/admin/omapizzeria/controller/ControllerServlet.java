@@ -75,7 +75,7 @@ public class ControllerServlet extends HttpServlet {
 		
 		
 		
-		try {
+		/*try {
 			dhinta = Double.parseDouble(hhinta);
 			
 			Pizza test1 = new Pizza(4,nnimi,dhinta);
@@ -88,7 +88,7 @@ public class ControllerServlet extends HttpServlet {
 			
 		}
 		response.sendRedirect("controller?added=true");
-			
+			*/
 			
 			
 			    
