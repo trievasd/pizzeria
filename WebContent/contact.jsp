@@ -119,20 +119,20 @@ Opastinsilta 12 b, 00520 Helsinki
                         <div class="row">
                             <div class="form-group col-lg-4">
                                 <label>Nimi</label>
-                                <input type="text" class="form-control">
+                                <input type="text" name="contactnimi" class="form-control">
                             </div>
                             <div class="form-group col-lg-4">
                                 <label>Sähköposti</label>
-                                <input type="email" class="form-control">
+                                <input type="email" name="contactemail" class="form-control">
                             </div>
                             <div class="form-group col-lg-4">
                                 <label>Puhelinnumero</label>
-                                <input type="tel" class="form-control">
+                                <input type="tel" name="contactpuh" class="form-control">
                             </div>
                             <div class="clearfix"></div>
                             <div class="form-group col-lg-12">
                                 <label>Viesti</label>
-                                <textarea class="form-control" rows="6"></textarea>
+                                <textarea class="form-control" name="palautetext" rows="6"></textarea>
                             </div>
                             <div class="form-group col-lg-12">
                                 <input type="hidden" name="save" value="contact">
