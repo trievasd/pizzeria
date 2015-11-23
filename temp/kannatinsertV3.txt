@@ -1,4 +1,4 @@
-INSERT INTO tayte
+ÔªøINSERT INTO tayte
 VALUES ('1','Tomaattikastike'),('2','Tuplajuusto'),
 ('3','Jauheliha'),('4','Ananas'),('5','Aurajuusto'),
 ('6','Kinkku'),('7','Herkkusieni'),('8','Tonnikala'),
@@ -10,14 +10,14 @@ VALUES ('1','Tomaattikastike'),('2','Tuplajuusto'),
 ('24','Smetana'),('25','Simpukka'),('26','Parsa');
 
 INSERT INTO hintaryhma (nimi, ryhmahinta)
-VALUES ('2 taytetta','6'),('3 taytetta','7'),('4 taytetta','8'),('4 taytetta special','8.5');
+VALUES ('2 taytetta','6'),('3 taytetta','7'),('4 taytetta','8'),('5 taytetta','8.5');
 
 
 INSERT INTO tuote (nimi, hinta_id)
 VALUES ('Margarita','1'),('Bolognese','1'),('Americano','2'),('Opera','2'),('Frutti Di Mare','2'),
 ('Vegetariana','3'),('Pepperoni','3'),('Quattro Stagioni','3'),('Kebabpizza','3'),
 ('Dillinger','3'),('Julia','3'),('Romeo','3'),('Al capone','3'),
-('Izmir','4'),('Herkules','4'),('Mexicana','4'),('Kummiset‰','4');
+('Izmir','4'),('Herkules','4'),('Mexicana','4'),('Kummiset√§','4');
 
 INSERT INTO tuotteentaytteet (tayte1_id, tayte2_id, tayte3_id, tayte4_id, tayte5_id, tayte6_id, tuote_id)
 VALUES ('1','2',NULL,NULL,NULL,NULL,'1'),('1','3',NULL,NULL,NULL,NULL,'2'),
@@ -31,7 +31,7 @@ VALUES ('1','2',NULL,NULL,NULL,NULL,'1'),('1','3',NULL,NULL,NULL,NULL,'2'),
 ('7','14','6','26','2',NULL,'17');
 
 INSERT INTO tilaus (tilausos, postinro, postitmp, tilauspvm, hintasumma, asiaketun, asiaksukun, asiakpuh)
-VALUES ('K‰pyl‰ntie 12 as.8','00650','Helsinki','2015-12-25 13:34:23','24.00','Jaakko','Siiskonen','050973920');
+VALUES ('K√§pyl√§ntie 12 as.8','00650','Helsinki','2015-12-25 13:34:23','24.00','Jaakko','Siiskonen','050973920');
 
 INSERT INTO tilausrivi (maara, tilaus_id, tuote_id, rivihinta, oregano, valkosipuli)
 VALUES ('2','1','7','16.00',FALSE, true),('1','1','9','8.00',TRUE, false);
