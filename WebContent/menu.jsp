@@ -91,7 +91,7 @@ Opastinsilta 12 b, 00520 Helsinki
 <caption>Pizzat</caption>
 <thead>
 	<tr>
-		<td>ID</td>
+		<td>NRO</td>
 		<td>Nimi</td>
         <td>Täytteet</td>
 		<td>Hinta</td>
