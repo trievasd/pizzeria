@@ -65,7 +65,9 @@ Opastinsilta 12 b, 00520 Helsinki
                     </li>
                     <li>
                         <a href="contact.jsp">Ota yhteyttä</a>
-                    </li>
+                   
+                   </li>
+                   <%@ include file="okori.inc" %>
                 </ul>
             </div>
             <!-- /.navbar-collapse -->
