@@ -8,11 +8,14 @@ public class Ostoskori {
 	private boolean valkosipuli;
 	private String tuote_nimi;
 	
-	
+	public Ostoskori() 
+	{
+		
+	}
 	
 	public Ostoskori(int tuote_id, double rivihinta, boolean oregano,
 			boolean valkosipuli, String tuote_nimi) {
-		super();
+		
 		this.tuote_id = tuote_id;
 		this.rivihinta = rivihinta;
 		this.oregano = oregano;

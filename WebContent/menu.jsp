@@ -100,19 +100,25 @@ Opastinsilta 12 b, 00520 Helsinki
     
 </thead>
 <tbody>
-<c:forEach items="${pizzat}" var="pizza">
-	<tr>
-		<td><c:out value="${pizza.id}"/></td>
-		<td><c:out value="${pizza.nimi}"/></td>
-		<td>
-		<c:forEach items="${pizza.taytteet}" var="tayte" varStatus="counter">
-			<c:out value="${tayte.nimi}"/><c:if test="${!counter.last}">, </c:if> 
-		</c:forEach>
-		</td>
-		<td><c:out value="${pizza.hinta}"/> &euro;</td>
-		<td><button>Lisää ostoskoriin</button></td>
-	</tr>
-</c:forEach>
+
+
+<jsp:useBean id="ostoskoritaulukko" scope="request" type="java.util.List" />
+<form action="OstoskoriServlet" method="post">
+	<c:forEach items="${pizzat}" var="pizza">
+		<tr>
+			<td><c:out value="${pizza.id}"/></td>
+			<td><c:out value="${pizza.nimi}"/></td>
+			<td>
+				<c:forEach items="${pizza.taytteet}" var="tayte" varStatus="counter">
+					<c:out value="${tayte.nimi}"/><c:if test="${!counter.last}">, </c:if> 
+				</c:forEach>
+			</td>
+			<td><c:out value="${pizza.hinta}"/> &euro;</td>
+			<td><button name="tuoteid" type="button" value=${pizza.id}>Lisää ostoskoriin</button></td>
+		</tr>
+	</c:forEach>
+</form>
+
 </tbody>
 </table>
                 </div> <!-- /CONTENT -->
@@ -146,6 +152,7 @@ Opastinsilta 12 b, 00520 Helsinki
     <!-- Bootstrap Core JavaScript -->
     <script src="js/bootstrap.min.js"></script>
 
+<% session.setAttribute("ostoskoritaulukko", ostoskoritaulukko); %>
 </body>
 
 </html>

@@ -1,6 +1,7 @@
 package fi.admin.omapizzeria.controller;
 
 import java.io.IOException;
+import java.util.LinkedList;
 import java.util.List;
 
 import javax.servlet.ServletException;
@@ -11,6 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import dao.PizzaDAO;
 import dao.TayteDAO;
+import fi.omapizzeria.admin.bean.Ostoskori;
 import fi.omapizzeria.admin.bean.Pizza;
 
 /**
@@ -41,10 +43,11 @@ public class MenuServlet extends HttpServlet {
 		List<Pizza> pizzat = tDao.haePizzat();
 		
 		
+		LinkedList<Ostoskori> ostoskoriArray = new LinkedList<Ostoskori>();
 		
 		
 		request.setAttribute("pizzat", pizzat);
-		
+		request.setAttribute("ostokoritaulukko",ostoskoriArray);
 		
 		request.getRequestDispatcher("menu.jsp").forward(request, response);
 	}
