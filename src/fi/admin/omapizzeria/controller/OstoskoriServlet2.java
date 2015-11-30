@@ -15,22 +15,24 @@ import javax.servlet.http.HttpServletResponse;
 import fi.omapizzeria.admin.bean.Ostoskori;
 
 /**
- * Servlet implementation class OstoskoriServlet
+ * Servlet implementation class OstoskoriServlet2
  */
-@WebServlet("/OstoskoriServlet")
-public class OstoskoriServlet extends HttpServlet {
+@WebServlet("/OstoskoriServlet2")
+public class OstoskoriServlet2 extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	private RequestDispatcher jsp;
-       
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public OstoskoriServlet() {
+    public OstoskoriServlet2() {
         super();
         // TODO Auto-generated constructor stub
     }
-    
-    public void init(ServletConfig config) throws ServletException {
+
+	/**
+	 * @see Servlet#init(ServletConfig)
+	 */
+	public void init(ServletConfig config) throws ServletException {
 		ServletContext context = config.getServletContext();
 		jsp = context.getRequestDispatcher("/menu2.jsp");
 		try {
@@ -41,8 +43,7 @@ public class OstoskoriServlet extends HttpServlet {
 			throw new ServletException(e);
 		}
 	}
-    
-    
+
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
@@ -54,20 +55,19 @@ public class OstoskoriServlet extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
 		
+		LinkedList<Ostoskori> ostoskoritaulukko = (LinkedList<Ostoskori>) request.getSession().getAttribute("ostoskoritaulukko");
+		for (int i = 0; i < ostoskoritaulukko.size(); i++){
+			System.out.println("Jotain: " + ostoskoritaulukko.get(i).getTuote_id());
+		}
 		
-		LinkedList<Ostoskori> ostoskoriArray = new LinkedList<Ostoskori>();
-		
-		
-		Ostoskori ostoskori = new Ostoskori();
-		String tuoteidString = request.getParameter("tuoteid");
-		ostoskori.setTuote_id(new Integer(tuoteidString));
-		ostoskoriArray.add(ostoskori);
-
-		request.setAttribute("ostoskoritaulukko",ostoskoriArray);
-		jsp.forward(request,response);
-		
+//		Ostoskori ostoskori = new Ostoskori();
+//		String tuoteidString = request.getParameter("tuoteid");
+//		ostoskori.setTuote_id(new Integer(tuoteidString));
+//		ostoskoritaulukko.add(ostoskori);
+//
+//		request.setAttribute("ostoskoritaulukko",ostoskoritaulukko);
+//		jsp.forward(request,response);
 	}
 
 }

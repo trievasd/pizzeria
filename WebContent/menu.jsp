@@ -67,7 +67,7 @@ Opastinsilta 12 b, 00520 Helsinki
                         <a href="contact.jsp">Ota yhteyttä</a>
                    
                    </li>
-                   <%@ include file="okori.inc" %>
+<%--                    <%@ include file="okori.inc" %> --%>
                 </ul>
             </div>
             <!-- /.navbar-collapse -->
@@ -116,7 +116,7 @@ Opastinsilta 12 b, 00520 Helsinki
 				</c:forEach>
 			</td>
 			<td><c:out value="${pizza.hinta}"/> &euro;</td>
-			<td><button name="tuoteid" type="button" value=${pizza.id}>Lisää ostoskoriin</button></td>
+			<td><button name="tuoteid" type="submit" value=${pizza.id}>Lisää ostoskoriin</button></td>
 		</tr>
 	</c:forEach>
 </form>

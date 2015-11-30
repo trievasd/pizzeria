@@ -47,7 +47,7 @@ public class MenuServlet extends HttpServlet {
 		
 		
 		request.setAttribute("pizzat", pizzat);
-		request.setAttribute("ostokoritaulukko",ostoskoriArray);
+		request.setAttribute("ostoskoritaulukko",ostoskoriArray);
 		
 		request.getRequestDispatcher("menu.jsp").forward(request, response);
 	}

@@ -1,7 +1,12 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+    <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html lang="en">
+
+<jsp:useBean id="ostoskoritaulukko" scope="request" type="java.util.List" />
+<%@ page import="fi.omapizzeria.admin.bean.Ostoskori" %>
+<%@ page import="java.util.Iterator" %>
 
 <head>
 
@@ -34,7 +39,7 @@
 
 <body>
 
-   <div class="brand">Aurinkopizza</div><!-- Upper business name and info -->
+    <div class="brand">Aurinkopizza</div><!-- Upper business name and info -->
     <div class="address-bar">
 Opastinsilta 12 b, 00520 Helsinki
 <br>Auki Arkisin 9-22, Viikonloppuisin 9-24</div>
@@ -64,8 +69,9 @@ Opastinsilta 12 b, 00520 Helsinki
                     </li>
                     <li>
                         <a href="contact.jsp">Ota yhteyttä</a>
-                    </li>
-<%--                <%@ include file="okori.inc" %> --%>
+                   
+                   </li>
+<%--                    <%@ include file="okori.inc" %> --%>
                 </ul>
             </div>
             <!-- /.navbar-collapse -->
@@ -76,73 +82,64 @@ Opastinsilta 12 b, 00520 Helsinki
     <div class="container">
 
         <div class="row">
-            <div class="box"> <!-- Container for contact info -->
+            <div class="box"> <!-- Container for menu -->
                 <div class="col-lg-12">
                     <hr>
                     <h2 class="intro-text text-center">
-                    <strong>Yhteystiedot</strong>
+                        <strong>Ruokalista</strong>
                     </h2>
                     <hr>
                 </div>
-                <div class="col-md-8">
-                    <!-- Embedded Google Map using an iframe - to select your location find it on Google maps and paste the link as the iframe src. If you want to use the Google Maps API instead then have at it! -->
-                    <iframe width="100%" height="400" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://www.google.com/maps/embed/v1/place?q=Opastinsilta+12+b,+00520+Helsinki,+Suomi&key=AIzaSyAN0om9mFmy1QN6Wf54tXAowK4eT0ZUPrU"></iframe>
-                </div>
-                <div class="col-md-4">
-                    <p>Puhelinnumero:
-                        <strong>+358509871234</strong>
-                    </p>
-                    <p>Email:
-                        <strong><a href="mailto:aurinkopizza@gmail.com">aurinkopizza@gmail.com</a></strong>
-                    </p>
-                    <p>Osoite:
-                        <strong>Opastinsilta 12 b
-                            <br>00520 Helsinki</strong>
-                    </p>
-                <p>Toimitusalue:
-                				<strong> 7 Kilometriä</strong></p>
-                </div>
-                <div class="clearfix"></div>
-            </div>
-        </div> <!-- /Container for contact -->
+                
+                <div class="col-md-6"> <!--CONTENT -->
+                  
+                <table id="ruokalista">
+<caption>Pizzat</caption>
+<thead>
+	<tr>
+		<td>NRO</td>
+		<td>Nimi</td>
+        <td>Täytteet</td>
+		<td>Hinta</td>
+		<td>Nappi</td>
+	</tr>
+    
+</thead>
+<tbody>
 
-        <div class="row"> <!-- Container for contact form -->
-            <div class="box">
-                <div class="col-lg-12">
-                    <hr>
-                    <h2 class="intro-text text-center">
-                   <strong> Palautelomake </strong>
-                        
-                    </h2>
-                    <hr>
-                    
-                    <form role="form">
-                        <div class="row">
-                            <div class="form-group col-lg-4">
-                                <label>Nimi</label>
-                                <input type="text" name="contactnimi" class="form-control">
-                            </div>
-                            <div class="form-group col-lg-4">
-                                <label>Sähköposti</label>
-                                <input type="email" name="contactemail" class="form-control">
-                            </div>
-                            <div class="form-group col-lg-4">
-                                <label>Puhelinnumero</label>
-                                <input type="tel" name="contactpuh" class="form-control">
-                            </div>
-                            <div class="clearfix"></div>
-                            <div class="form-group col-lg-12">
-                                <label>Viesti</label>
-                                <textarea class="form-control" name="palautetext" rows="6"></textarea>
-                            </div>
-                            <div class="form-group col-lg-12">
-                                <input type="hidden" name="save" value="contact">
-                                <button type="submit" class="btn btn-default">Lähetä¤</button>
-                            </div>
-                        </div>
-                    </form>
-                </div>
+
+
+
+<form action="OstoskoriServlet2" method="post">
+	<c:forEach items="${pizzat}" var="pizza">
+		<tr>
+			<td><c:out value="${pizza.id}"/></td>
+			<td><c:out value="${pizza.nimi}"/></td>
+			<td>
+				<c:forEach items="${pizza.taytteet}" var="tayte" varStatus="counter">
+					<c:out value="${tayte.nimi}"/><c:if test="${!counter.last}">, </c:if> 
+				</c:forEach>
+			</td>
+			<td><c:out value="${pizza.hinta}"/> &euro;</td>
+			<td><button name="tuoteid" type="submit" value=${pizza.id}>Lisää ostoskoriin</button></td>
+		</tr>
+	</c:forEach>
+</form>
+
+<%
+	session.setAttribute("ostoskoritaulukko", ostoskoritaulukko);
+%>
+
+
+</tbody>
+</table>
+                </div> <!-- /CONTENT -->
+                <div class="clearfix"></div>
             </div> <!-- /Container for contact form -->
+        </div>
+
+        <div class="row">
+            
         </div>
 
     </div>
@@ -167,6 +164,7 @@ Opastinsilta 12 b, 00520 Helsinki
     <!-- Bootstrap Core JavaScript -->
     <script src="js/bootstrap.min.js"></script>
 
+<% session.setAttribute("ostoskoritaulukko", ostoskoritaulukko); %>
 </body>
 
 </html>
