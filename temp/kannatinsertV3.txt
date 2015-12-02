@@ -35,3 +35,6 @@ VALUES ('Käpyläntie 12 as.8','00650','Helsinki','2015-12-25 13:34:23','24.00',
 
 INSERT INTO tilausrivi (maara, tilaus_id, tuote_id, rivihinta, oregano, valkosipuli)
 VALUES ('2','1','7','16.00',FALSE, true),('1','1','9','8.00',TRUE, false);
+
+INSERT INTO palaute (pvm, nimi, sahkoposti, palautepuh, viesti)
+VALUES ('2015-12-25 13:34:23','Jaakko Siiskonen','jaakko.siiskonen@gmail.com','050973920','Vittu mikään ei toimi mitä vittua saatana');

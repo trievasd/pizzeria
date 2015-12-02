@@ -65,13 +65,13 @@ FOREIGN KEY (tilaus_id) REFERENCES tilaus(id),
 FOREIGN KEY (tuote_id) REFERENCES tuote(id)
 );
 
-//ei viel ylhääl
+
 CREATE TABLE palaute
 (
 id INTEGER NOT NULL PRIMARY KEY AUTO_INCREMENT,
 pvm DATETIME NOT NULL,
 nimi VARCHAR(30),
 sahkoposti VARCHAR(50),
-palautepuh VARCHAR(16),
+palautepuh VARCHAR(20),
 viesti VARCHAR(255)
 );
