@@ -4,6 +4,11 @@
 <!DOCTYPE html>
 <html lang="en">
 
+
+<jsp:useBean id="ostoskoritaulukko" scope="request" type="java.util.List" />
+<%@ page import="fi.omapizzeria.admin.bean.Ostoskori" %>
+<%@ page import="java.util.Iterator" %>
+
 <head>
 
     <meta charset="UTF-8">
@@ -67,7 +72,11 @@ Opastinsilta 12 b, 00520 Helsinki
                         <a href="contact.jsp">Ota yhteyttä</a>
                    
                    </li>
-<%@ include file="okori.inc" %>
+                <%if (ostoskoritaulukko.isEmpty()) { %>
+						<%@ include file="okoriEmpty.inc" %>
+				<%}else {%>
+						<%@ include file="okori.inc" %>
+				<%} %>
                 </ul>
             </div>
             <!-- /.navbar-collapse -->
@@ -104,8 +113,8 @@ Opastinsilta 12 b, 00520 Helsinki
 <tbody>
 
 
-<jsp:useBean id="ostoskoritaulukko" scope="request" type="java.util.List" />
-<form action="OstoskoriServlet" method="post">
+
+<form action="menu" method="post">
 	<c:forEach items="${pizzat}" var="pizza">
 		<tr>
 			<td><c:out value="${pizza.id}"/></td>
