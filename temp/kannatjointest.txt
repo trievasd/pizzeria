@@ -32,3 +32,8 @@ left JOIN tayte as s6
 ON tt.tayte6_id = s6.id;
 
 // 
+
+
+//Palautteen hakulause ja insertti
+Select id, pvm, nimi, sahkoposti, palautepuh, viesti FROM palaute;
+INSERT INTO palaute (pvm, nimi, sahkoposti, palautepuh, viesti) VALUES(?,?,?,?,?)

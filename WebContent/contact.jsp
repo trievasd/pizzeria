@@ -116,7 +116,7 @@ Opastinsilta 12 b, 00520 Helsinki
                     </h2>
                     <hr>
                     
-                    <form role="form">
+                    <form role="form" action="Palaute" method="post">
                         <div class="row">
                             <div class="form-group col-lg-4">
                                 <label>Nimi</label>
