@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+     <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -115,6 +116,8 @@ Opastinsilta 12 b, 00520 Helsinki
                         
                     </h2>
                     <hr>
+                    
+                    <c:if test="${not empty param.sent}"> <script>alert("Palautteen lähettäminen onnistui. Kiitos palautteesta.");</script></c:if>
                     
                     <form role="form" action="Palaute" method="post">
                         <div class="row">

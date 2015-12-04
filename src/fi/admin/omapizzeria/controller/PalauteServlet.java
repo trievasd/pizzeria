@@ -58,7 +58,7 @@ public class PalauteServlet extends HttpServlet {
 
 		
 		
-		response.sendRedirect("contact.jsp?sent");
+		response.sendRedirect("contact.jsp?sent=true");
 		
 	}
 
