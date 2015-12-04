@@ -2,6 +2,7 @@ package fi.admin.omapizzeria.controller;
 
 import java.io.IOException;
 import java.util.LinkedList;
+import java.util.List;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletConfig;
@@ -12,7 +13,9 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import dao.TayteDAO;
 import fi.omapizzeria.admin.bean.Ostoskori;
+import fi.omapizzeria.admin.bean.Pizza;
 
 /**
  * Servlet implementation class OstoskoriServlet2
@@ -56,18 +59,23 @@ public class OstoskoriServlet2 extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
+		TayteDAO tDao = new TayteDAO();
+		List<Pizza> pizzat = tDao.haePizzat();
+		
 		LinkedList<Ostoskori> ostoskoritaulukko = (LinkedList<Ostoskori>) request.getSession().getAttribute("ostoskoritaulukko");
 		for (int i = 0; i < ostoskoritaulukko.size(); i++){
 			System.out.println("Jotain: " + ostoskoritaulukko.get(i).getTuote_id());
 		}
 		
-//		Ostoskori ostoskori = new Ostoskori();
-//		String tuoteidString = request.getParameter("tuoteid");
-//		ostoskori.setTuote_id(new Integer(tuoteidString));
-//		ostoskoritaulukko.add(ostoskori);
-//
-//		request.setAttribute("ostoskoritaulukko",ostoskoritaulukko);
-//		jsp.forward(request,response);
+				
+		Ostoskori ostoskori = new Ostoskori();
+		String tuoteidString = request.getParameter("tuoteid");
+		ostoskori.setTuote_id(new Integer(tuoteidString));
+		ostoskoritaulukko.add(ostoskori);
+
+		request.setAttribute("pizzat", pizzat);
+		request.setAttribute("ostoskoritaulukko",ostoskoritaulukko);
+		jsp.forward(request,response);
 	}
 
 }

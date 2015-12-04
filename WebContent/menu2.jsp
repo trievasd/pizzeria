@@ -107,7 +107,13 @@ Opastinsilta 12 b, 00520 Helsinki
 </thead>
 <tbody>
 
-
+<% 
+	System.out.println("Menu2 ja ostoskortin sisältö:");
+	Iterator it = ostoskoritaulukko.iterator();
+	while (it.hasNext()) {
+		Ostoskori ostoskoriItem = (Ostoskori) it.next();
+		System.out.println(ostoskoriItem.getTuote_id());
+} %>
 
 
 <form action="OstoskoriServlet2" method="post">
