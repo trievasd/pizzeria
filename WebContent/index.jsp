@@ -3,6 +3,11 @@
 <!DOCTYPE html>
 <html lang="en">
 
+<jsp:useBean id="ostoskoritaulukko" scope="request" type="java.util.List" />
+<%@ page import="fi.omapizzeria.admin.bean.Ostoskori" %>
+<%@ page import="java.util.Iterator" %>
+<%@ page import="java.util.List" %>
+
 <head>
 
     <meta charset="UTF-8">
@@ -57,15 +62,19 @@ Opastinsilta 12 b, 00520 Helsinki
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
                     <li>
-                        <a href="index.jsp">Etusivu</a>
+                        <a href="etusivu">Etusivu</a>
                     </li>
                     <li>
                         <a href="menu">Menu</a>
                     </li>
                     <li>
-                        <a href="contact.jsp">Ota yhteyttä</a>
+                        <a href="Palaute">Ota yhteyttä</a>
                     </li>
-<%@ include file="okori.inc" %>
+				<%if (ostoskoritaulukko==null) { %>
+						<%@ include file="okoriEmpty.inc" %>
+				<%}else {%>
+						<%@ include file="okori.inc" %>
+				<%} %>
                 </ul>
             </div>
             <!-- /.navbar-collapse -->

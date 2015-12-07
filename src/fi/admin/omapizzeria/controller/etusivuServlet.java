@@ -1,6 +1,8 @@
 package fi.admin.omapizzeria.controller;
 
 import java.io.IOException;
+import java.util.Iterator;
+import java.util.LinkedList;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletConfig;
@@ -11,34 +13,31 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import dao.DAOPoikkeus;
-import dao.PalauteDAO;
 import fi.omapizzeria.admin.bean.Ostoskori;
-import fi.omapizzeria.admin.bean.Palaute;
 
-import java.util.Date;
-import java.util.Iterator;
-import java.util.LinkedList;
 /**
- * Servlet implementation class PalauteServlet
+ * Servlet implementation class etusivuServlet
  */
-@WebServlet("/Palaute")
-public class PalauteServlet extends HttpServlet {
+@WebServlet("/etusivu")
+public class etusivuServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-	private RequestDispatcher jsp;        
+	private RequestDispatcher jsp;  
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public PalauteServlet() {
+    public etusivuServlet() {
         super();
         // TODO Auto-generated constructor stub
     }
 
-    
+	/**
+	 * @see Servlet#init(ServletConfig)
+	 */
 	public void init(ServletConfig config) throws ServletException {
 		ServletContext context = config.getServletContext();
 		jsp = context.getRequestDispatcher("/index.jsp");
 	}
+
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
@@ -47,7 +46,7 @@ public class PalauteServlet extends HttpServlet {
 		{
 			LinkedList<Ostoskori> ostoskoritaulukko = new LinkedList<Ostoskori>();;
 			request.setAttribute("ostoskoritaulukko",ostoskoritaulukko);
-			request.getRequestDispatcher("contact.jsp").forward(request, response);
+			request.getRequestDispatcher("index.jsp").forward(request, response);
 			
 			System.out.println("Ostoskori on tyhjä");
 		}
@@ -56,7 +55,7 @@ public class PalauteServlet extends HttpServlet {
 			LinkedList<Ostoskori> ostoskoritaulukko = (LinkedList<Ostoskori>) request.getSession().getAttribute("ostoskoritaulukko");
 			request.setAttribute("ostoskoritaulukko",ostoskoritaulukko);
 			
-			request.getRequestDispatcher("contact.jsp").forward(request, response);
+			request.getRequestDispatcher("index.jsp").forward(request, response);
 			System.out.println("Ostoskorissa on tuotteita");
 			Iterator it = ostoskoritaulukko.iterator();
 			while (it.hasNext()) {
@@ -70,27 +69,7 @@ public class PalauteServlet extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
-		String pnimi = request.getParameter("contactnimi");
-		String pemail = request.getParameter("contactemail");
-		String ppuh = request.getParameter("contactpuh");
-		String pviesti = request.getParameter("palautetext");
-		Date nykyhetki = new Date();
-		
-		Palaute p = new Palaute(pnimi, pemail, ppuh, pviesti, nykyhetki);
-		
-		try {
-			PalauteDAO paDao = new PalauteDAO();
-			paDao.lisaa(p);
-		} catch (DAOPoikkeus e) {
-			throw new ServletException(e);
-		}
-		
-
-		
-		
-		response.sendRedirect("Palaute?sent=true");
-		
+		// TODO Auto-generated method stub
 	}
 
 }

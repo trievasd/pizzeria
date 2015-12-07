@@ -63,13 +63,13 @@ Opastinsilta 12 b, 00520 Helsinki
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
                     <li>
-                        <a href="index.jsp">Etusivu</a>
+                        <a href="etusivu">Etusivu</a>
                     </li>
                     <li>
                         <a href="menu">Menu</a>
                     </li>
                     <li>
-                        <a href="contact.jsp">Ota yhteyttä</a>
+                        <a href="Palaute">Ota yhteyttä</a>
                    
                    </li>
                 <%if (ostoskoritaulukko.isEmpty()) { %>

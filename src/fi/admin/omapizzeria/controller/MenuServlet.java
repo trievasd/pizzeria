@@ -1,6 +1,7 @@
 package fi.admin.omapizzeria.controller;
 
 import java.io.IOException;
+import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -57,14 +58,34 @@ public class MenuServlet extends HttpServlet {
 		TayteDAO tDao = new TayteDAO();
 		List<Pizza> pizzat = tDao.haePizzat();
 		
+		
 		//if(request.getSession().{
-		LinkedList<Ostoskori> ostoskoriArray = new LinkedList<Ostoskori>();
-	
 		
-		request.setAttribute("pizzat", pizzat);
-		request.setAttribute("ostoskoritaulukko",ostoskoriArray);
+		if (request.getSession().getAttribute("ostoskoritaulukko")==null)
+		{
+			LinkedList<Ostoskori> ostoskoritaulukko = new LinkedList<Ostoskori>();
+			request.setAttribute("pizzat", pizzat);
+			request.setAttribute("ostoskoritaulukko",ostoskoritaulukko);
+			request.getRequestDispatcher("menu.jsp").forward(request, response);
+			
+			System.out.println("Ostoskori on tyhjä");
+		}
+		else
+		{
+			LinkedList<Ostoskori> ostoskoritaulukko = (LinkedList<Ostoskori>) request.getSession().getAttribute("ostoskoritaulukko");
+			request.setAttribute("pizzat", pizzat);
+			request.setAttribute("ostoskoritaulukko",ostoskoritaulukko);
+			
+			request.getRequestDispatcher("menu.jsp").forward(request, response);
+			System.out.println("Ostoskorissa on tuotteita");
+			Iterator it = ostoskoritaulukko.iterator();
+			while (it.hasNext()) {
+				Ostoskori ostoskoriItem = (Ostoskori) it.next();
+				System.out.println(ostoskoriItem.getTuote_id());
+			}
+		}
 		
-		request.getRequestDispatcher("menu.jsp").forward(request, response);
+		
 	}
 
 	/**
