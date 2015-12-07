@@ -151,7 +151,7 @@ Opastinsilta 12 b, 00520 Helsinki
                             </div>
                             <div class="form-group col-lg-12">
                                 <input type="hidden" name="save" value="contact">
-                                <button type="submit" class="btn btn-default">Lähetä¤</button>
+                                <button type="submit" class="btn btn-default">Lähetä</button>
                             </div>
                         </div>
                     </form>
