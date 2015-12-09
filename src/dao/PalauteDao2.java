@@ -17,6 +17,8 @@ public class PalauteDao2 {
 	
 	public List<Palaute> haePalautteet() {
 		
+		//admin sivun palautteiden hakemiseen tarkoitettu DAO
+		
 		ArrayList<Palaute> palautteet = new ArrayList<Palaute>();
 		
 		Connection yhteys = null;
