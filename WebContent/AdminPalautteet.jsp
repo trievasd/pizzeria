@@ -11,22 +11,21 @@
 
 
 <c:forEach items="${palautteet}" var="pal">
-<table>
-				
+<table id="palaute">
+				<thead>
 					<tr>
 						<td>ID: <c:out value="${pal.id}" /></td>
-						<td>PVM: <c:out value="${pal.pvm}" /></td>
-						<td>Nimi: <c:out value="${pal.nimi}" /></td>
-						<td>Sähköposti: <c:out value="${pal.sahkoposti}" /></td>
-						<td>Puh: <c:out value="${pal.palautepuh}" /></td>
-						<td>Viesti:</td>
-						<td><c:out value="${pal.viesti}" /></td>
-						<td><button name="pal_id" type="submit" value=${pal.id}>Poista</button></td>
+						<tr><td>PVM: <c:out value="${pal.pvm}" /></td>
+						<tr><td>Nimi: <c:out value="${pal.nimi}" /></td>
+						<tr><td>Sähköposti: <c:out value="${pal.sahkoposti}" /></td>
+						<tr><td>Puh: <c:out value="${pal.palautepuh}" /></td>
+						<tr><td>Viesti: <c:out value="${pal.viesti}" /></td>
+						<tr><td><button name="pal_id" type="submit" value=${pal.id}>Poista</button></td>
 					</tr>
 
 				
 
-
+</thead>
 </table>
 	</c:forEach>
 	
