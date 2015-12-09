@@ -16,18 +16,27 @@
 <table id="palaute">
 				<thead>
 					<tr>
-						<td>ID: <c:out value="${pal.id}" /></td>
-						<tr><td>PVM: <c:out value="${pal.pvm}" /></td>
-						<tr><td>Nimi: <c:out value="${pal.nimi}" /></td>
-						<tr><td>Sähköposti: <c:out value="${pal.sahkoposti}" /></td>
-						<tr><td>Puh: <c:out value="${pal.palautepuh}" /></td>
-						<tr><td>Viesti: <c:out value="${pal.viesti}" /></td>
-						<tr><td><button name="pal_id" type="submit" value=${pal.id}>Poista</button></td>
+						<td>ID:</td>
+						<td>PVM:</td>
+						<td>Nimi:</td>
+						<td>Sähköposti:</td>
+						<td>Puh:</td>
+						<td>Viesti:</td>
+						<td><button name="pal_id" type="submit" value=${pal.id}>Poista</button></td>
 					</tr>
 
 				
 
 </thead>
+<tbody>
+<td><c:out value="${pal.id}" /></td>
+<td><c:out value="${pal.pvm}" /></td>
+<td><c:out value="${pal.nimi}" /></td>
+<td><c:out value="${pal.sahkoposti}" /></td>
+<td><c:out value="${pal.palautepuh}" /></td>
+<td><c:out value="${pal.viesti}" /></td>
+
+</tbody>
 </table>
 	</c:forEach>
 	

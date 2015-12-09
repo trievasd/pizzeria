@@ -68,7 +68,7 @@ public class Palaute {
 		this.pvm = pvm;
 	}
 	public Palaute() {
-		// TODO Auto-generated constructor stub
+		
 	}
 	@Override
 	public String toString() {
