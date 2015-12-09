@@ -13,7 +13,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import fi.omapizzeria.admin.bean.Ostoskori;
+import fi.omapizzeria.admin.bean.OstoskoriPizza;
 
 /**
  * Servlet implementation class etusivuServlet
@@ -44,7 +44,7 @@ public class etusivuServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		if (request.getSession().getAttribute("ostoskoritaulukko")==null)
 		{
-			LinkedList<Ostoskori> ostoskoritaulukko = new LinkedList<Ostoskori>();;
+			LinkedList<OstoskoriPizza> ostoskoritaulukko = new LinkedList<OstoskoriPizza>();;
 			request.setAttribute("ostoskoritaulukko",ostoskoritaulukko);
 			request.getRequestDispatcher("index.jsp").forward(request, response);
 			
@@ -52,14 +52,14 @@ public class etusivuServlet extends HttpServlet {
 		}
 		else
 		{
-			LinkedList<Ostoskori> ostoskoritaulukko = (LinkedList<Ostoskori>) request.getSession().getAttribute("ostoskoritaulukko");
+			LinkedList<OstoskoriPizza> ostoskoritaulukko = (LinkedList<OstoskoriPizza>) request.getSession().getAttribute("ostoskoritaulukko");
 			request.setAttribute("ostoskoritaulukko",ostoskoritaulukko);
 			
 			request.getRequestDispatcher("index.jsp").forward(request, response);
 			System.out.println("Ostoskorissa on tuotteita");
 			Iterator it = ostoskoritaulukko.iterator();
 			while (it.hasNext()) {
-				Ostoskori ostoskoriItem = (Ostoskori) it.next();
+				OstoskoriPizza ostoskoriItem = (OstoskoriPizza) it.next();
 				System.out.println(ostoskoriItem.getTuote_id());
 			}
 		}

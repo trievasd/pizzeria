@@ -14,7 +14,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import dao.TayteDAO;
-import fi.omapizzeria.admin.bean.Ostoskori;
+import fi.omapizzeria.admin.bean.OstoskoriPizza;
 import fi.omapizzeria.admin.bean.Pizza;
 
 /**
@@ -62,13 +62,13 @@ public class OstoskoriServlet2 extends HttpServlet {
 		TayteDAO tDao = new TayteDAO();
 		List<Pizza> pizzat = tDao.haePizzat();
 		
-		LinkedList<Ostoskori> ostoskoritaulukko = (LinkedList<Ostoskori>) request.getSession().getAttribute("ostoskoritaulukko");
+		LinkedList<OstoskoriPizza> ostoskoritaulukko = (LinkedList<OstoskoriPizza>) request.getSession().getAttribute("ostoskoritaulukko");
 		for (int i = 0; i < ostoskoritaulukko.size(); i++){
 			System.out.println("Jotain: " + ostoskoritaulukko.get(i).getTuote_id());
 		}
 		
 				
-		Ostoskori ostoskori = new Ostoskori();
+		OstoskoriPizza ostoskori = new OstoskoriPizza();
 		String tuoteidString = request.getParameter("tuoteid");
 		ostoskori.setTuote_id(new Integer(tuoteidString));
 		ostoskoritaulukko.add(ostoskori);

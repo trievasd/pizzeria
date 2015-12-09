@@ -1,6 +1,6 @@
 package fi.omapizzeria.admin.bean;
 
-public class Ostoskori {
+public class OstoskoriPizza {
 
 	private int tuote_id;
 	private double rivihinta;
@@ -8,12 +8,12 @@ public class Ostoskori {
 	private boolean valkosipuli;
 	private String tuote_nimi;
 	
-	public Ostoskori() 
+	public OstoskoriPizza() 
 	{
 		
 	}
 	
-	public Ostoskori(int tuote_id, double rivihinta, boolean oregano,
+	public OstoskoriPizza(int tuote_id, double rivihinta, boolean oregano,
 			boolean valkosipuli, String tuote_nimi) {
 		
 		this.tuote_id = tuote_id;

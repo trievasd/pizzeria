@@ -14,9 +14,10 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import dao.OstoskoriDAO;
 import dao.PizzaDAO;
 import dao.TayteDAO;
-import fi.omapizzeria.admin.bean.Ostoskori;
+import fi.omapizzeria.admin.bean.OstoskoriPizza;
 import fi.omapizzeria.admin.bean.Pizza;
 
 /**
@@ -63,7 +64,7 @@ public class MenuServlet extends HttpServlet {
 		
 		if (request.getSession().getAttribute("ostoskoritaulukko")==null)
 		{
-			LinkedList<Ostoskori> ostoskoritaulukko = new LinkedList<Ostoskori>();
+			LinkedList<OstoskoriPizza> ostoskoritaulukko = new LinkedList<OstoskoriPizza>();
 			request.setAttribute("pizzat", pizzat);
 			request.setAttribute("ostoskoritaulukko",ostoskoritaulukko);
 			request.getRequestDispatcher("menu.jsp").forward(request, response);
@@ -72,7 +73,7 @@ public class MenuServlet extends HttpServlet {
 		}
 		else
 		{
-			LinkedList<Ostoskori> ostoskoritaulukko = (LinkedList<Ostoskori>) request.getSession().getAttribute("ostoskoritaulukko");
+			LinkedList<OstoskoriPizza> ostoskoritaulukko = (LinkedList<OstoskoriPizza>) request.getSession().getAttribute("ostoskoritaulukko");
 			request.setAttribute("pizzat", pizzat);
 			request.setAttribute("ostoskoritaulukko",ostoskoritaulukko);
 			
@@ -80,7 +81,7 @@ public class MenuServlet extends HttpServlet {
 			System.out.println("Ostoskorissa on tuotteita");
 			Iterator it = ostoskoritaulukko.iterator();
 			while (it.hasNext()) {
-				Ostoskori ostoskoriItem = (Ostoskori) it.next();
+				OstoskoriPizza ostoskoriItem = (OstoskoriPizza) it.next();
 				System.out.println(ostoskoriItem.getTuote_id());
 			}
 		}
@@ -96,16 +97,28 @@ public class MenuServlet extends HttpServlet {
 		TayteDAO tDao = new TayteDAO();
 		List<Pizza> pizzat = tDao.haePizzat();
 		
-		LinkedList<Ostoskori> ostoskoritaulukko = (LinkedList<Ostoskori>) request.getSession().getAttribute("ostoskoritaulukko");
+		LinkedList<OstoskoriPizza> ostoskoritaulukko = (LinkedList<OstoskoriPizza>) request.getSession().getAttribute("ostoskoritaulukko");
 		for (int i = 0; i < ostoskoritaulukko.size(); i++){
 			System.out.println("Jotain: " + ostoskoritaulukko.get(i).getTuote_id());
 		}
 		
 				
-		Ostoskori ostoskori = new Ostoskori();
+		OstoskoriPizza ostoskoripizza = new OstoskoriPizza();
 		String tuoteidString = request.getParameter("tuoteid");
-		ostoskori.setTuote_id(new Integer(tuoteidString));
-		ostoskoritaulukko.add(ostoskori);
+		
+		int tuoteid = Integer.parseInt(tuoteidString);
+
+		
+		OstoskoriDAO oDao = new OstoskoriDAO();
+		Pizza pizza = oDao.find(tuoteid);
+		System.out.println("Tuotteita...." + pizza.toString());
+		
+		//List<Pizza> ostoskoripizza = oDao.find(int tuoteid);
+		
+		ostoskoripizza.setTuote_id(new Integer(tuoteidString));
+		ostoskoripizza.setTuote_nimi(pizza.getNimi());
+		ostoskoripizza.setRivihinta(pizza.getHinta());
+		ostoskoritaulukko.add(ostoskoripizza);
 
 		request.setAttribute("pizzat", pizzat);
 		request.setAttribute("ostoskoritaulukko",ostoskoritaulukko);

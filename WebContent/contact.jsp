@@ -6,7 +6,7 @@
 
 
 <jsp:useBean id="ostoskoritaulukko" scope="request" type="java.util.List" />
-<%@ page import="fi.omapizzeria.admin.bean.Ostoskori" %>
+<%@ page import="fi.omapizzeria.admin.bean.OstoskoriPizza" %>
 <%@ page import="java.util.Iterator" %>
 <%@ page import="java.util.List" %>
 

@@ -13,62 +13,21 @@
 		                            <span>
 		                           		 <% 
 											
-											Ostoskori ostoskoriItem = (Ostoskori) it2.next(); %>
-											<%=ostoskoriItem.getTuote_id() %>
+											OstoskoriPizza ostoskoriItem = (OstoskoriPizza) it2.next(); %>
+											<%=ostoskoriItem.getTuote_id() %>.
+											<%=ostoskoriItem.getTuote_nimi() %>
+											<%=ostoskoriItem.getRivihinta() %> &euro;
 		                            </span>
-		                            <span>23$</span>
+		                            
 		                        </span>
 		                    </span>
-		                    <span class="item-right">
-		                        <button class="btn btn-xs btn-danger pull-right">x</button>
-		                    </span>
+		                    
 		                </span>
 		              </li>
               <% } %>
               
               
               
-              <li>
-                  <span class="item">
-                    <span class="item-left">
-                        
-                        <span class="item-info">
-                            <span>Item name</span>
-                            <span>23$</span>
-                        </span>
-                    </span>
-                    <span class="item-right">
-                        <button class="btn btn-xs btn-danger pull-right">x</button>
-                    </span>
-                </span>
-              </li>
-              <li>
-                  <span class="item">
-                    <span class="item-left">
-                       
-                        <span class="item-info">
-                            <span>Item name</span>
-                            <span>23$</span>
-                        </span>
-                    </span>
-                    <span class="item-right">
-                        <button class="btn btn-xs btn-danger pull-right">x</button>
-                    </span>
-                </span>
-              </li>
-              <li>
-                  <span class="item">
-                    <span class="item-left">
-                        
-                        <span class="item-info">
-                            <span>Item name</span>
-                            <span>23$</span>
-                        </span>
-                    </span>
-                    <span class="item-right">
-                        <button class="btn btn-xs btn-danger pull-right">x</button>
-                    </span>
-                </span>
-              </li>
+              
               <li class="divider"></li>
-              <li><a class="text-center" href="">Näytä ostoskori</a></li>
+              <li><a class="text-center" href="">Tee tilaus</a></li>

@@ -13,13 +13,13 @@
                         
                         <span class="item-info">
                             <span>TYHJÄ</span>
-                            <span>23$</span>
+                            
                         </span>
                     </span>
-                    <span class="item-right">
+                    <!--<span class="item-right">
                         <button class="btn btn-xs btn-danger pull-right">x</button>
-                    </span>
+                    </span>-->
                 </span>
               </li>
               <li class="divider"></li>
-              <li><a class="text-center" href="">Näytä ostoskori</a></li>
+              <li><a class="text-center" href="">Tee tilaus</a></li>
