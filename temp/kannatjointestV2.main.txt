@@ -1,9 +1,6 @@
 //tilausrivi testaus
 
-SELECT tilausrivi.id, tilausrivi.maara, tilausrivi.tilaus_id, tuote.nimi as pizza, tilausrivi.rivihinta, tilausrivi.oregano, tilausrivi.valkosipuli
-FROM tilausrivi
-INNER JOIN tuote
-ON tilausrivi.tuote_id=tuote.id; 
+SELECT tilausrivi.tilaus_id, tuote.nimi as pizza, tilausrivi.rivihinta, tilausrivi.oregano, tilausrivi.valkosipuli,  FROM tilausrivi INNER JOIN tuote ON tilausrivi.tuote_id=tuote.id; 
 
 //
 

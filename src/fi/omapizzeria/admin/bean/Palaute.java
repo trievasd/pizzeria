@@ -67,6 +67,9 @@ public class Palaute {
 		this.viesti = viesti;
 		this.pvm = pvm;
 	}
+	public Palaute() {
+		
+	}
 	@Override
 	public String toString() {
 		return "Palaute [id=" + id + ", nimi=" + nimi + ", sahkoposti="
