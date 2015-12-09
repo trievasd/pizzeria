@@ -48,7 +48,7 @@ public class PalauteDAO {
 	 * Hakee kaikki palautteet kannasta
 	 * @return listallinen palautteita
 	 */
-	public List<Palaute> haeKaikki() throws DAOPoikkeus{		
+	public List<Palaute> haePalautteet() throws DAOPoikkeus{		
 		
 		ArrayList<Palaute> palautteet = new ArrayList<Palaute>();
 		
@@ -108,7 +108,10 @@ public class PalauteDAO {
 			//alustetaan sql-lause
 			String sql = "INSERT INTO palaute (pvm, nimi, sahkoposti, palautepuh, viesti) VALUES(?,?,?,?,?)";
 			PreparedStatement lause = yhteys.prepareStatement(sql);
-			System.out.println("testi "+formatter.format(p.getPvm()).toString());
+			
+			//daten testaus, miksi ei mennyt kantaan ja miss‰ mmuodossa on
+			//System.out.println("testi "+formatter.format(p.getPvm()).toString());
+			
 			//t‰ytet‰‰n puuttuvat tiedot
 			lause.setString(1, formatter.format(p.getPvm()).toString());
 			lause.setString(2, p.getNimi());

@@ -67,6 +67,9 @@ public class Palaute {
 		this.viesti = viesti;
 		this.pvm = pvm;
 	}
+	public Palaute() {
+		// TODO Auto-generated constructor stub
+	}
 	@Override
 	public String toString() {
 		return "Palaute [id=" + id + ", nimi=" + nimi + ", sahkoposti="
