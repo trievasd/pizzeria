@@ -9,6 +9,7 @@
 <link href="css/business-casual.css" rel="stylesheet" type="text/css">
 <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css">
 </head>
+<div class="box">
 <body>
 
 <form role="form" action="AdminTilausServlet" method="get">
@@ -17,7 +18,7 @@
 
 
 <c:forEach items="${tilaukset}" var="til">
-<table id="palaute">
+<table id="tilaus">
 				<thead>
 					<tr>
 						<td>ID:</td>
@@ -91,4 +92,5 @@
 	
 
 </body>
+</div>
 </html>
