@@ -4,15 +4,17 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>AurinkoPizza</title>
 <link href="css/business-casual.css" rel="stylesheet" type="text/css">
 <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css">
 </head>
+<div class="box">
 <body>
 
 
 <c:forEach items="${palautteet}" var="pal">
+
 <table id="palaute">
 				<thead>
 					<tr>
@@ -38,6 +40,7 @@
 
 </tbody>
 </table>
+
 	</c:forEach>
 	
 	<form role="form" action="AdminPalauteServlet" method="get">
@@ -46,4 +49,5 @@
 
 
 </body>
+</div>
 </html>
