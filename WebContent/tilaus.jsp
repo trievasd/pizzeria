@@ -1,12 +1,15 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-    <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+     <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html lang="en">
+
 
 <jsp:useBean id="ostoskoritaulukko" scope="request" type="java.util.List" />
 <%@ page import="fi.omapizzeria.admin.bean.OstoskoriPizza" %>
 <%@ page import="java.util.Iterator" %>
+<%@ page import="java.util.List" %>
+
 
 <head>
 
@@ -39,7 +42,7 @@
 
 <body>
 
-    <div class="brand">Aurinkopizza</div><!-- Upper business name and info -->
+   <div class="brand">Aurinkopizza</div><!-- Upper business name and info -->
     <div class="address-bar">
 Opastinsilta 12 b, 00520 Helsinki
 <br>Auki Arkisin 9-22, Viikonloppuisin 9-24</div>
@@ -62,16 +65,19 @@ Opastinsilta 12 b, 00520 Helsinki
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
                     <li>
-                        <a href="index.jsp">Etusivu</a>
+                        <a href="etusivu">Etusivu</a>
                     </li>
                     <li>
                         <a href="menu">Menu</a>
                     </li>
                     <li>
-                        <a href="contact.jsp">Ota yhteyttä</a>
-                   
-                   </li>
-                    <%@ include file="okori.inc" %>
+                        <a href="Palaute">Ota yhteyttä</a>
+                    </li>
+				<%if (ostoskoritaulukko.isEmpty()) { %>
+						<%@ include file="okoriEmpty.inc" %>
+				<%}else {%>
+						<%@ include file="okori.inc" %>
+				<%} %>
                 </ul>
             </div>
             <!-- /.navbar-collapse -->
@@ -82,70 +88,72 @@ Opastinsilta 12 b, 00520 Helsinki
     <div class="container">
 
         <div class="row">
-            <div class="box"> <!-- Container for menu -->
+            <div class="box"> <!-- Container for contact info -->
                 <div class="col-lg-12">
                     <hr>
                     <h2 class="intro-text text-center">
-                        <strong>Ruokalista</strong>
+                    <strong>Tilaamasi tuotteet</strong>
                     </h2>
                     <hr>
                 </div>
                 
-                <div class="col-md-6"> <!--CONTENT -->
-                  
-                <table id="ruokalista">
-<caption>Pizzat</caption>
-<thead>
-	<tr>
-		<td>NRO</td>
-		<td>Nimi</td>
-        <td>Täytteet</td>
-		<td>Hinta</td>
-		<td>Nappi</td>
-	</tr>
-    
-</thead>
-<tbody>
-
-<% 
-	System.out.println("Menu2 ja ostoskortin sisältö:");
-	Iterator it = ostoskoritaulukko.iterator();
-	while (it.hasNext()) {
-		Ostoskori ostoskoriItem = (Ostoskori) it.next();
-		System.out.println(ostoskoriItem.getTuote_id());
-} %>
-
-
-<form action="OstoskoriServlet2" method="post">
-	<c:forEach items="${pizzat}" var="pizza">
-		<tr>
-			<td><c:out value="${pizza.id}"/></td>
-			<td><c:out value="${pizza.nimi}"/></td>
-			<td>
-				<c:forEach items="${pizza.taytteet}" var="tayte" varStatus="counter">
-					<c:out value="${tayte.nimi}"/><c:if test="${!counter.last}">, </c:if> 
-				</c:forEach>
-			</td>
-			<td><c:out value="${pizza.hinta}"/> &euro;</td>
-			<td><button name="tuoteid" type="submit" value=${pizza.id}>Lisää ostoskoriin</button></td>
-		</tr>
-	</c:forEach>
-</form>
-
-<%
-	session.setAttribute("ostoskoritaulukko", ostoskoritaulukko);
-%>
-
-
-</tbody>
-</table>
-                </div> <!-- /CONTENT -->
+                <div class="col-md-4">
+                    <p>Tilaamasi tuotteet ovat::
+                        <strong>Pizzzzaah</strong>
+                    </p>
+                    
+                </div>
                 <div class="clearfix"></div>
-            </div> <!-- /Container for contact form -->
-        </div>
+            </div>
+        </div> <!-- /Container for contact -->
 
-        <div class="row">
-            
+        <div class="row"> <!-- Container for contact form -->
+            <div class="box">
+                <div class="col-lg-12">
+                    <hr>
+                    <h2 class="intro-text text-center">
+                   <strong> Tilauslomake </strong>
+                        
+                    </h2>
+                    <hr>
+                    
+                    <c:if test="${not empty param.sent}"> <script>alert("Palautteen lähettäminen onnistui. Kiitos palautteesta.");</script></c:if>
+                    
+                    <form role="form" action="Tilaus" method="post">
+                        <div class="row">
+                            <div class="form-group col-lg-4">
+                                <label>Etunimi</label>
+                                <input type="text" name="tetunimi" class="form-control">
+                            </div>
+                            <div class="form-group col-lg-4">
+                                <label>Sukunimi</label>
+                                <input type="text" name="tsukunimi" class="form-control">
+                            </div>
+                            <div class="form-group col-lg-4">
+                                <label>Osoite</label>
+                                <input type="text" name="tosoite" class="form-control">
+                            </div>
+                            <div class="form-group col-lg-4">
+                                <label>Postinumero</label>
+                                <input type="text" name="tpostinro" class="form-control">
+                            </div>
+                            <div class="form-group col-lg-4">
+                                <label>Postitoimipaikka</label>
+                                <input type="text" name="tpostitmp" class="form-control">
+                            </div>
+                             <div class="form-group col-lg-4">
+                                <label>Puhelinnumero</label>
+                                <input type="tel" name="contactpuh" class="form-control">
+                            </div>
+                            
+                            <div class="form-group col-lg-12">
+                                <input type="hidden" name="save" value="contact">
+                                <button type="submit" class="btn btn-default">Lähetä</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div> <!-- /Container for contact form -->
         </div>
 
     </div>
@@ -170,7 +178,6 @@ Opastinsilta 12 b, 00520 Helsinki
     <!-- Bootstrap Core JavaScript -->
     <script src="js/bootstrap.min.js"></script>
 
-<% session.setAttribute("ostoskoritaulukko", ostoskoritaulukko); %>
 </body>
 
 </html>

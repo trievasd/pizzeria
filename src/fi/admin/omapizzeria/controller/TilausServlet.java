@@ -1,6 +1,9 @@
 package fi.admin.omapizzeria.controller;
 
 import java.io.IOException;
+import java.util.Date;
+import java.util.Iterator;
+import java.util.LinkedList;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletConfig;
@@ -12,33 +15,31 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import dao.DAOPoikkeus;
-import dao.PalauteDAO;
+import dao.TilausDAO;
 import fi.omapizzeria.admin.bean.OstoskoriPizza;
-import fi.omapizzeria.admin.bean.Palaute;
+import fi.omapizzeria.admin.bean.Tilaus;
+import fi.omapizzeria.admin.bean.Tilaus2;
 
-import java.util.Date;
-import java.util.Iterator;
-import java.util.LinkedList;
 /**
- * Servlet implementation class PalauteServlet
+ * Servlet implementation class TilausServlet
  */
-@WebServlet("/Palaute")
-public class PalauteServlet extends HttpServlet {
+@WebServlet("/Tilaus")
+public class TilausServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-	private RequestDispatcher jsp;        
+	private RequestDispatcher jsp;  
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public PalauteServlet() {
+    public TilausServlet() {
         super();
         // TODO Auto-generated constructor stub
     }
 
-    
-	public void init(ServletConfig config) throws ServletException {
+    public void init(ServletConfig config) throws ServletException {
 		ServletContext context = config.getServletContext();
-		jsp = context.getRequestDispatcher("/contact.jsp");
+		jsp = context.getRequestDispatcher("/tilaus.jsp");
 	}
+    
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
@@ -47,7 +48,7 @@ public class PalauteServlet extends HttpServlet {
 		{
 			LinkedList<OstoskoriPizza> ostoskoritaulukko = new LinkedList<OstoskoriPizza>();;
 			request.setAttribute("ostoskoritaulukko",ostoskoritaulukko);
-			request.getRequestDispatcher("contact.jsp").forward(request, response);
+			request.getRequestDispatcher("tilaus.jsp").forward(request, response);
 			
 			System.out.println("Ostoskori on tyhjä");
 		}
@@ -56,7 +57,7 @@ public class PalauteServlet extends HttpServlet {
 			LinkedList<OstoskoriPizza> ostoskoritaulukko = (LinkedList<OstoskoriPizza>) request.getSession().getAttribute("ostoskoritaulukko");
 			request.setAttribute("ostoskoritaulukko",ostoskoritaulukko);
 			
-			request.getRequestDispatcher("contact.jsp").forward(request, response);
+			request.getRequestDispatcher("tilaus.jsp").forward(request, response);
 			System.out.println("Ostoskorissa on tuotteita");
 			Iterator it = ostoskoritaulukko.iterator();
 			while (it.hasNext()) {
@@ -70,27 +71,33 @@ public class PalauteServlet extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	
+		System.out.println(request.getParameter("tetunimi"));
+		System.out.println(request.getParameter("tsukunimi"));
+		System.out.println(request.getParameter("tosoite"));
+		System.out.println(request.getParameter("tpostinro"));
+		System.out.println(request.getParameter("tpostitmp"));
+		System.out.println(request.getParameter("contactpuh"));
 		
-		String pnimi = request.getParameter("contactnimi");
-		String pemail = request.getParameter("contactemail");
-		String ppuh = request.getParameter("contactpuh");
-		String pviesti = request.getParameter("palautetext");
+		String tetun = request.getParameter("tetunimi");
+		String tsukun = request.getParameter("tsukunimi");
+		String tos = request.getParameter("tosoite");
+		String tpostinro = request.getParameter("tpostinro");
+		String tpostitmp = request.getParameter("tpostitmp");
+		String tpuh = request.getParameter("contactpuh");
 		Date nykyhetki = new Date();
+		System.out.println(tetun);
 		
-		Palaute p = new Palaute(pnimi, pemail, ppuh, pviesti, nykyhetki);
-		System.out.println("tässä jotain" + p.toString());
+		Tilaus2 t = new Tilaus2(tetun, tsukun, tpuh, 0, tos, tpostinro, tpostitmp, nykyhetki);
+		System.out.println("tässä jotain" + t);
 		try {
-			PalauteDAO paDao = new PalauteDAO();
-			paDao.lisaa(p);
+			TilausDAO tilDao = new TilausDAO();
+			tilDao.lisaa(t);
 		} catch (DAOPoikkeus e) {
 			throw new ServletException(e);
 		}
 		
-
-		
-		
-		response.sendRedirect("Palaute?sent=true");
-		
+		response.sendRedirect("etusivu?sent=true");
 	}
 
 }

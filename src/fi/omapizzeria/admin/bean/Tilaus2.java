@@ -88,6 +88,21 @@ public class Tilaus2 {
 	public Tilaus2() {
 
 	}
+	public Tilaus2(String etunimi, String sukunimi, String puhnro, double hintasumma, String tilausos,
+			String postinro, String postitmp, Date tilauspvm) {
+		super();
+
+		this.etunimi = etunimi;
+		this.sukunimi = sukunimi;
+		this.puhnro = puhnro;
+		this.hintasumma = hintasumma;
+		this.tilausos = tilausos;
+		this.postinro = postinro;
+		this.postitmp = postitmp;
+		this.tilauspvm = tilauspvm;
+		
+
+	}
 	@Override
 	public String toString() {
 		return "Tilaus2 [id=" + id + ", etunimi=" + etunimi + ", sukunimi="
