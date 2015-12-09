@@ -19,8 +19,6 @@
 						<td>Nimi: <c:out value="${pal.nimi}" /></td>
 						<td>Sähköposti: <c:out value="${pal.sahkoposti}" /></td>
 						<td>Puh: <c:out value="${pal.palautepuh}" /></td>
-					</tr>
-					<tr>
 						<td>Viesti:</td>
 						<td><c:out value="${pal.viesti}" /></td>
 						<td><button name="pal_id" type="submit" value=${pal.id}>Poista</button></td>
