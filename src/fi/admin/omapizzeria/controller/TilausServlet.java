@@ -123,12 +123,12 @@ public class TilausServlet extends HttpServlet {
 			
 			TilausDAO tilDao2 = new TilausDAO();
 			int tilaus_id = tilDao2.haeTilaus(nykyhetki);
-			System.out.println(tilaus_id);
+
 			
 			while (it2.hasNext()) {
 				int tuo_id = 0;
 				OstoskoriPizza ostoskoriItem = (OstoskoriPizza) it2.next();
-				System.out.println(ostoskoriItem.getTuote_id());
+	
 			
 				int maara = 1;
 				tuo_id = ostoskoriItem.getTuote_id();

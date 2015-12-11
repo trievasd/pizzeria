@@ -66,7 +66,6 @@ public class TilausDAO {
 		try {
 			
 			//suoritetaan haku
-			System.out.println("kantatest" + formatter.format(nykyhetki).toString());
 			String sql = "Select id, tilauspvm FROM tilaus WHERE tilauspvm = ?";
 			statement = yhteys.prepareStatement(sql);
 			statement.setString(1, formatter.format(nykyhetki).toString());;
