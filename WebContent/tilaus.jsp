@@ -98,9 +98,23 @@ Opastinsilta 12 b, 00520 Helsinki
                 </div>
                 
                 <div class="col-md-4">
-                    <p>Tilaamasi tuotteet ovat::
-                        <strong>Pizzzzaah</strong>
-                    </p>
+                    <p>Tilaamasi tuotteet ovat:
+                         </p>
+                        	
+                               <% Iterator it2 = ostoskoritaulukko.iterator();
+              	 while (it2.hasNext()) {  %>
+		              <p>
+		                  
+		                           		 <%OstoskoriPizza ostoskoriItem = (OstoskoriPizza) it2.next(); %>
+											<%=ostoskoriItem.getTuote_id() %>.
+											<%=ostoskoriItem.getTuote_nimi() %>
+											<%=ostoskoriItem.getRivihinta() %> &euro;
+																			
+		                         <br>
+		              </p>
+              <% } %>  
+              
+
                     
                 </div>
                 <div class="clearfix"></div>
@@ -147,7 +161,7 @@ Opastinsilta 12 b, 00520 Helsinki
                             </div>
                             
                             <div class="form-group col-lg-12">
-                                <input type="hidden" name="save" value="contact">
+                                <input type="hidden" name="save" value="${hintasumma}">
                                 <button type="submit" class="btn btn-default">Lähetä</button>
                             </div>
                         </div>

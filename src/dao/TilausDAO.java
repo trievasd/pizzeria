@@ -10,8 +10,10 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
+import fi.omapizzeria.admin.bean.AdminTilausRivi;
 import fi.omapizzeria.admin.bean.Palaute;
 import fi.omapizzeria.admin.bean.Tilaus2;
+import fi.omapizzeria.admin.bean.TilausRivi;
 
 public class TilausDAO {
 
@@ -49,33 +51,36 @@ public class TilausDAO {
 	 * Hakee kaikki palautteet kannasta
 	 * @return listallinen palautteita
 	 */
-	public List<Palaute> haePalautteet() throws DAOPoikkeus{		
+	public int haeTilaus(Date nykyhetki) throws DAOPoikkeus{		
 		
-		ArrayList<Palaute> palautteet = new ArrayList<Palaute>();
+		SimpleDateFormat formatter;
+		formatter = new SimpleDateFormat("yyyy-MM-dd HH-mm-ss");
+	
+		int tilaus_id = 0;
 		
 		//avataan yhteys
+		PreparedStatement statement = null;
+		ResultSet rs = null;
 		Connection yhteys = avaaYhteys();
 		
 		try {
 			
 			//suoritetaan haku
-			String sql = "Select id, pvm, nimi, sahkoposti, palautepuh, viesti FROM palaute";
+			System.out.println("kantatest" + formatter.format(nykyhetki).toString());
+			String sql = "Select id, tilauspvm FROM tilaus WHERE tilauspvm = ?";
+			statement = yhteys.prepareStatement(sql);
+			statement.setString(1, formatter.format(nykyhetki).toString());;
 			Statement haku = yhteys.createStatement();
-			ResultSet tulokset = haku.executeQuery(sql);
+			rs = statement.executeQuery();
 			
-			//käydään hakutulokset läpi
-			while(tulokset.next()) {
-				int id = tulokset.getInt("id");
-				String nimi = tulokset.getString("nimi");
-				String sahkoposti = tulokset.getString("sahkoposti");
-				String palautepuh = tulokset.getString("palautepuh");
-				String viesti = tulokset.getString("viesti");
-				Date pvm = tulokset.getDate("pvm");
-				
-				//lisätään henkilö listaan
-				Palaute p = new Palaute(id, nimi, sahkoposti, palautepuh, viesti, pvm);
-				palautteet.add(p);
+			while(rs.next()) {
+				tilaus_id = rs.getInt("id");
 			}
+			//käydään hakutulokset läpi
+			
+			
+
+			
 			
 		} catch(Exception e) {
 			//JOTAIN VIRHETTÄ TAPAHTUI
@@ -85,10 +90,10 @@ public class TilausDAO {
 			suljeYhteys(yhteys);
 		}
 		
-		System.out.println("HAETTIIN TIETOKANNASTA palautteet: " +palautteet.toString());
+		System.out.println("HAETTIIN TIETOKANNASTA tilausID: " +tilaus_id);
 		
-		return palautteet;
-	}
+		return tilaus_id;
+}
 	
 	
 	/**
@@ -127,6 +132,47 @@ public class TilausDAO {
 			//suoritetaan lause
 			lause.executeUpdate();
 			System.out.println("LISÄTTIIN TILAUS TIETOKANTAAN: "+t);
+		} catch(Exception e) {
+			//JOTAIN VIRHETTÄ TAPAHTUI
+			throw new DAOPoikkeus("Tilauksen lisäämisyritys aiheutti virheen", e);
+		}finally {
+			//LOPULTA AINA SULJETAAN YHTEYS
+			suljeYhteys(yhteys);
+		}
+
+	}
+	
+	public void lisaaRivi(TilausRivi til) throws DAOPoikkeus{
+		
+		//avataan yhteys
+		Connection yhteys = avaaYhteys();
+		
+		try {
+			
+			//suoritetaan haku
+			SimpleDateFormat formatter;
+			formatter = new SimpleDateFormat("yyyy-MM-dd HH-mm-ss");
+			
+			//alustetaan sql-lause
+			String sql = "INSERT INTO tilausrivi (maara, tilaus_id, tuote_id, rivihinta, oregano, valkosipuli) VALUES(?,?,?,?,?,?)";
+			PreparedStatement lause = yhteys.prepareStatement(sql);
+			
+			//daten testaus, miksi ei mennyt kantaan ja missä mmuodossa on
+			//System.out.println("testi "+formatter.format(p.getPvm()).toString());
+			
+			//täytetään puuttuvat tiedot
+			lause.setInt(1, til.getMaara());
+			lause.setInt(2, til.getTilaus_id());
+			lause.setInt(3, til.getTuote_id());
+			lause.setDouble(4, til.getRivihinta());
+			lause.setBoolean(5, til.isOregano());
+			lause.setBoolean(6, til.isValkosipuli());
+
+			
+			
+			//suoritetaan lause
+			lause.executeUpdate();
+			System.out.println("LISÄTTIIN TILAUSRivi TIETOKANTAAN: "+til);
 		} catch(Exception e) {
 			//JOTAIN VIRHETTÄ TAPAHTUI
 			throw new DAOPoikkeus("Tilauksen lisäämisyritys aiheutti virheen", e);

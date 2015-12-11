@@ -43,7 +43,7 @@
 
 	</c:forEach>
 	
-	<form role="form" action="AdminPalauteServlet" method="get">
+	<form role="form" action="AdminPalaute" method="get">
 	<td><button type="submit"><b>Hae Palautteet</b></button></td>
 	</form>
 

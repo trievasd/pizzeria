@@ -21,7 +21,7 @@ import fi.omapizzeria.admin.bean.Tilaus2;
 /**
  * Servlet implementation class AdminTilausServlet
  */
-@WebServlet("/AdminTilausServlet")
+@WebServlet("/AdminTilaus")
 public class AdminTilausServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	private RequestDispatcher jsp;

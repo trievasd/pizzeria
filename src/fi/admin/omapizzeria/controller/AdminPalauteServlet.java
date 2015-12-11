@@ -24,7 +24,7 @@ import fi.omapizzeria.admin.bean.Palaute;
 /**
  * Servlet implementation class AdminPalauteServlet
  */
-@WebServlet("/AdminPalauteServlet")
+@WebServlet("/AdminPalaute")
 public class AdminPalauteServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	private RequestDispatcher jsp;

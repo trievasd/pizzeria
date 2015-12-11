@@ -17,6 +17,7 @@
     <meta name="author" content="">
 
     <title>Aurinkopizza</title>
+    <c:if test="${not empty param.sent}"> <script>alert("Tilauksen lähettäminen onnistui. Kiitos tilauksesta.");</script></c:if>
 
     <!-- Bootstrap Core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">

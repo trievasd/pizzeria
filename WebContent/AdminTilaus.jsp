@@ -12,7 +12,7 @@
 <div class="box">
 <body>
 
-<form role="form" action="AdminTilausServlet" method="get">
+<form role="form" action="AdminTilaus" method="get">
 	<td><button type="submit"><b>Hae Tilaukset</b></button></td>
 	</form>
 
@@ -32,7 +32,7 @@
 						<td>Postitoimipaikka:</td>
 						
 						
-						<form role="form" action="AdminTilausServlet" method="post">
+						<form role="form" action="AdminTilaus" method="post">
 						<td><button name="tilaus_id" type="submit" value=${til.id}>Näytä tilaus</button></td>
 						</form>
 						
