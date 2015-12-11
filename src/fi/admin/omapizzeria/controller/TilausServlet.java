@@ -66,11 +66,11 @@ public class TilausServlet extends HttpServlet {
 			Iterator it = ostoskoritaulukko.iterator();
 			while (it.hasNext()) {
 				OstoskoriPizza ostoskoriItem = (OstoskoriPizza) it.next();
-				System.out.println(ostoskoriItem.getTuote_id());
+	
 				hintasumma = hintasumma + (ostoskoriItem.getRivihinta());
 			}
 			request.setAttribute("summa",hintasumma);
-			System.out.println(hintasumma);
+
 		}
 	}
 
@@ -86,17 +86,11 @@ public class TilausServlet extends HttpServlet {
 		
 		while (it.hasNext()) {
 			OstoskoriPizza ostoskoriItem = (OstoskoriPizza) it.next();
-			System.out.println(ostoskoriItem.getTuote_id());
 			hintasumma = hintasumma + (ostoskoriItem.getRivihinta());
 		}
 
 
-		System.out.println(request.getParameter("tetunimi"));
-		System.out.println(request.getParameter("tsukunimi"));
-		System.out.println(request.getParameter("tosoite"));
-		System.out.println(request.getParameter("tpostinro"));
-		System.out.println(request.getParameter("tpostitmp"));
-		System.out.println(request.getParameter("contactpuh"));
+	
 		
 		String tetun = request.getParameter("tetunimi");
 		String tsukun = request.getParameter("tsukunimi");
@@ -105,10 +99,10 @@ public class TilausServlet extends HttpServlet {
 		String tpostitmp = request.getParameter("tpostitmp");
 		String tpuh = request.getParameter("contactpuh");
 		Date nykyhetki = new Date();
-		System.out.println(tetun);
+
 		
 		Tilaus2 t = new Tilaus2(tetun, tsukun, tpuh, hintasumma, tos, tpostinro, tpostitmp, nykyhetki);
-		System.out.println("tässä jotain" + t);
+
 		try {
 			TilausDAO tilDao = new TilausDAO();
 			tilDao.lisaa(t);
