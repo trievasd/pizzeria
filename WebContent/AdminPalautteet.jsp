@@ -24,7 +24,7 @@
 						<td>Sähköposti:</td>
 						<td>Puh:</td>
 						<td>Viesti:</td>
-						<td><button name="pal_id" type="submit" value=${pal.id}>Poista</button></td>
+					<!--	<td><button name="pal_id" type="submit" value=${pal.id}>Poista</button></td>-->
 					</tr>
 
 				
